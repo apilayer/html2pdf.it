@@ -1,0 +1,19 @@
+{
+	"author": "Allan Ebdrup",
+	"name": "html2pdf.it",
+	"version": "0.0.1",
+	"main": "./source/app.js",
+	"dependencies": {
+		"express": "",
+		"mime":""
+	},
+	"devDependencies":{
+		"mocha":"",
+		"request":"",
+		"chai":""
+	},
+	"scripts": {
+		"start": "node ./source/app.js",
+		"test": "node ./tests/runTests.js"
+	}
+}
