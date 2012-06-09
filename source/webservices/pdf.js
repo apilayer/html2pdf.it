@@ -8,7 +8,7 @@ module.exports = function(http){
 	http.get("/pdf", function(req, res, next){
 		var url = req.param("url");
 
-		var pdfProcess = spawn(path.join(__dirname, "/../../bin/", pdfExecutable), ["-", "--javascript-delay", 500, url]);
+		var pdfProcess = spawn(path.join(__dirname, "/../../bin/", pdfExecutable), ["--javascript-delay", 500, url, "-"]);
 
 		pdfProcess.stdout.on('data', function(data) {
 			res.write(data);
