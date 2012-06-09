@@ -1,14 +1,11 @@
 var spawn = require('child_process').spawn;
 var path = require("path");
-var fs = require("fs");
-var mime = require("mime");
 
 var pdfExecutable = "wkhtmltopdf-linux-amd64";
 
 module.exports = function(http){
 
 	http.get("/pdf", function(req, res, next){
-		res.setHeader('Content-Type', mime.lookup(path))
 		var url = req.param("url");
 
 		var pdfProcess = spawn(path.join(__dirname, "/../../bin/", pdfExecutable), ["-", "--javascript-delay", 500, url]);
