@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Html2pdf that doesn't suck</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
+	<script type="text/javascript" src="/syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/scripts/shBrushXml.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/scripts/shBrushCss.js"></script>
+	<link type="text/css" rel="stylesheet" href="/syntaxhighlighter/styles/shCoreDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.all();</script>
+	<style>
+		body {
+			font-family: Verdana;
+			color: #333;
+		}
+
+		h1 {
+			font-size: 18px;
+		}
+
+		.code {
+			font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+			color: blue;
+		}
+
+		.brand {
+			font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+			color: red;
+		}
+
+		.brandHeading {
+			font-size: 60px;
+			font-weight: bold;
+		}
+
+		.content {
+			width: 800px;
+			margin: 0 auto;
+		}
+
+		.author {
+			margin-top: -16px;
+			color: #666;
+			font-size: 14px;
+		}
+
+		.example {
+			border-radius: 5px;
+			padding: 10px;
+			margin-left: 200px;
+			margin-right: 200px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background-color: #ddd;
+			border: 1px solid #aaa;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+	<h1>
+		<div class="brandHeading">html<span class="brand">2</span>pdf.<span class="brand">it</span></div>
+		Convert your html to a pdf that doesn't suck.
+	</h1>
+
+	<div class="author">
+		By Allan Ebdrup
+	</div>
+
+	<h1>
+		What is this?</h1>
+	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.</li>
+
+	<h1>
+		How does it work</h1>
+
+	<p>You just call <span class="code">http://html2pdf.it/pdf?url=[url_to_convert_to_pdf]</span></p>
+
+	<div class="example">
+		<form method="GET" action="http://html2pdf.it/pdf">
+			Type in URL to generate a pdf<br/>
+			<input type="text" name="url" size="50" value="http://"/>
+		</form>
+	</div>
+	<h1>
+		What are the features?</h1>
+	<ul>
+		<li>Selectable text</li>
+		<li>Javascript on the page is run</li>
+		<li>Flash is not rendered</li>
+	</ul>
+	<h1>
+		Why should I use this?</h1>
+	<ul>
+		<li>Converting html to pdf is a fast and easy way to create beautiful pdf files, you loose a little control
+			over the exact layout. But you will be generating pdf files much faster than coding them by hand.
+		</li>
+		<li>When running a website pdf generation is a CPU and memory-heavy operation. If you do the pdf-generation
+			on your web servers and you get a surge in people requesting pdf files, your entire website might become
+			slow.
+			That's why you should generate pdf files on separate application-servers. Using
+			html<span class="brand">2</span>pdf.<span class="brand">it</span>, we are those application-servers for you.
+		</li>
+	</ul>
+	<h1>
+		How stable is this service?</h1>
+	It's being run on several load balanced application servers with fail over, the up-time should be high.
+	<h1>
+		Why is this free?</h1>
+	This is just an experiment to see if there is any interest in this kind of service. If we get a lot of interest
+	there will be some kind of payment for the service, to cover server costs. If not, just use it for free and enjoy.
+
+
+</div>
+</body>
+</html>

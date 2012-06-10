@@ -5,7 +5,7 @@
 	"main": "./source/app.js",
 	"dependencies": {
 		"express": "",
-		"mime":""
+		"gzippo": ""
 	},
 	"devDependencies":{
 		"mocha":"",
