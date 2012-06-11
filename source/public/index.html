@@ -41,8 +41,8 @@
 		.example {
 			border-radius: 5px;
 			padding: 10px;
-			margin-left: 200px;
-			margin-right: 200px;
+			margin-left: 150px;
+			margin-right: 150px;
 			margin-top: 10px;
 			margin-bottom: 10px;
 			background-color: #ddd;
@@ -51,6 +51,45 @@
 		.facebookLikeBox{
 			margin-top: 30px;
 			text-align: center;
+		}
+		.bigButton
+		{
+			color: #555;
+			text-decoration: none;
+			font-size: 12px;
+			padding: 8px 8px 8px 8px;
+			border: solid 1px #FFF;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			color: #555;
+			background-color: #ffd65e;
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 214, 94)), color-stop(0.65, rgb(254,191,4)));
+			background: -moz-linear-gradient(center top,rgb(255, 214, 94)25%, rgb(254,191,4)65%);
+			font-weight: bold;
+			text-align: center;
+			cursor: pointer;
+			-webkit-box-shadow: 1px 1px 2px #555;
+			-moz-box-shadow: 1px 1px 2px #555;
+			box-shadow: 1px 1px 2px #555;
+		}
+		.bigButton:hover
+		{
+			background-color: #FFE084;
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 224, 132)), color-stop(0.65, rgb(254,214,94)));
+			background: -moz-linear-gradient(center top,rgb(255, 224, 132)25%, rgb(254,214,94)65%);
+			-webkit-box-shadow: 1px 1px 3px #111;
+			-moz-box-shadow: 1px 1px 3px #111;
+			box-shadow: 1px 1px 3px #111;
+			color: #444;
+		}
+		.url{
+			font-size: 16px;
+			font-weight: bold;
+			color: #333;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
 		}
 	</style>
 </head>
@@ -75,24 +114,50 @@
 
 	<h1>
 		What is this?</h1>
-	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.</li>
+	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.<br />
+	It's primary usecase is for a webapplication to use it to generate pdf files, but use it for anything you like.
 
 	<h1>
 		How does it work?</h1>
 
 	<p>You just call <span class="code">http://html2pdf.it/pdf?url=[url_to_convert_to_pdf]</span></p>
-
-	<div class="example">
+	<script type="text/javascript" src="spin.min.js"></script>
+	<script type="text/javascript">
+		function spinme(){
+		var opts = {
+			lines: 13, // The number of lines to draw
+			length: 30, // The length of each line
+			width: 14, // The line thickness
+			radius: 36, // The radius of the inner circle
+			rotate: 0, // The rotation offset
+			color: '#000', // #rgb or #rrggbb
+			speed: 1, // Rounds per second
+			trail: 60, // Afterglow percentage
+			shadow: false, // Whether to render a shadow
+			hwaccel: false, // Whether to use hardware acceleration
+			className: 'spinner', // The CSS class to assign to the spinner
+			zIndex: 2e9, // The z-index (defaults to 2000000000)
+			top: 'auto', // Top position relative to parent in px
+			left: 'auto' // Left position relative to parent in px
+		};
+		var target = document.getElementById('pdfForm');
+		var spinner = new Spinner(opts).spin(target);
+		}
+	</script>
+	<div class="example" id="pdfForm" onsubmit="spinme()">
 		<form method="GET" action="http://html2pdf.it/pdf">
-			Type in URL to generate a pdf<br/>
-			<input type="text" name="url" size="50" value="http://"/>
+			Type in URL to generate a pdf right now...<br/>
+			<input type="text" name="url" size="40" class="url" value="http://en.wikipedia.org/wiki/Api"/>
+			<input type="submit" class="bigButton" value="Get pdf!"/>
 		</form>
 	</div>
 	<h1>
 		What are the features?</h1>
+	A pdf that doesn't suck.
 	<ul>
 		<li>Selectable text in the pdf</li>
-		<li>Javascript on the page is run</li>
+		<li>Renders a lot of CSS rules correctly</li>
+		<li>Javascript on the page is run (so you can use highcharts and the like)</li>
 		<li>Flash is not rendered</li>
 	</ul>
 	<h1>
@@ -105,12 +170,14 @@
 			on your web servers and you get a surge in people requesting pdf files, your entire website might become
 			slow.
 			That's why you should generate pdf files on separate application-servers. Using
-			html<span class="brand">2</span>pdf.<span class="brand">it</span>, we are those application-servers for you.
+			html<span class="brand">2</span>pdf.<span class="brand">it</span>, my servers are those application-servers for you.
 		</li>
+		<li>Hey, I really need this myself.</li>
 	</ul>
 	<h1>
 		How stable is this service?</h1>
 	It's running on several load balanced application servers with fail over, the up-time should be high.
+	I'm ready to scale up the number of servers at the push of a button, it's in the cloud baby!
 	<h1>
 		Why is this free?</h1>
 	This is just an experiment to see if there is any interest in this kind of service. If there is a lot of interest
