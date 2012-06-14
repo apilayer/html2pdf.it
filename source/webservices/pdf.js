@@ -7,20 +7,19 @@ module.exports = function(http){
 
 	http.get("/pdf", function(req, res, next){
 		var url = req.param("url");
+		var output = [];
 
 		var pdfProcess = spawn(path.join(__dirname, "/../../bin/", pdfExecutable), ["--javascript-delay", 500, url, "-"]);
 
-		pdfProcess.stdout.on('data', function(data) {
-			res.write(data);
-		});
+		pdfProcess.stdout.pipe(res);
 
 		pdfProcess.stderr.on('data', function(data) {
-			console.log('stderr: ' + data);
+			output.push(data);
 		});
 
 		pdfProcess.on('exit', function(code) {
 			console.log('pdf process exited with code ' + code);
-			res.end();
+			console.log(output.join(""));
 		});
 	});
 };
