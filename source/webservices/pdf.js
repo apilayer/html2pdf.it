@@ -6,6 +6,7 @@ var pdfExecutable = "wkhtmltopdf-linux-amd64";
 module.exports = function(http){
 
 	http.get("/pdf", function(req, res, next){
+		req.timeout = 2* 60 * 1000; //two minute timeout
 		var url = req.param("url");
 		var output = [];
 
