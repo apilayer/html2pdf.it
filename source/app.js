@@ -7,7 +7,7 @@ var http = express.createServer();
 
 
 http.configure(function () {
-	http.use(http.router);
+    http.use(http.router);
 	http.use(gzippo.staticGzip(__dirname + '/public', {clientMaxAge:-1000 * 60 * 60 * 24}));
 });
 
