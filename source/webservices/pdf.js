@@ -18,10 +18,6 @@ module.exports = function (http) {
 			"--debug-javascript",
 			"--javascript-delay", 500,
 			"--print-media-type",
-			"--margin-left", "0.0",
-			"--margin-top", "0.0",
-			"--margin-right", "0.0",
-			"--margin-bottom", "0.0",
 			url,
 			"-"
 		]);
@@ -33,7 +29,7 @@ module.exports = function (http) {
 		pdfProcess.stdout.on('close', function () {
 			if (!errorOccurred) {
 				res.header("content-type", "application/pdf");
-				res.header('Content-Disposition', 'attachment; filename="downloaded.pdf"');
+				//res.header('Content-Disposition', 'attachment; filename="downloaded.pdf"');
 				for (var i = 0; i < output.length; i++) {
 					res.write(output[i]);
 				}

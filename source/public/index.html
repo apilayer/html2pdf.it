@@ -48,12 +48,13 @@
 			background-color: #ddd;
 			border: 1px solid #aaa;
 		}
-		.facebookLikeBox{
+
+		.facebookLikeBox {
 			margin-top: 30px;
 			text-align: center;
 		}
-		.bigButton
-		{
+
+		.bigButton {
 			color: #555;
 			text-decoration: none;
 			font-size: 12px;
@@ -64,8 +65,8 @@
 			border-radius: 10px;
 			color: #555;
 			background-color: #ffd65e;
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 214, 94)), color-stop(0.65, rgb(254,191,4)));
-			background: -moz-linear-gradient(center top,rgb(255, 214, 94)25%, rgb(254,191,4)65%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 214, 94)), color-stop(0.65, rgb(254, 191, 4)));
+			background: -moz-linear-gradient(center top, rgb(255, 214, 94) 25%, rgb(254, 191, 4) 65%);
 			font-weight: bold;
 			text-align: center;
 			cursor: pointer;
@@ -73,23 +74,29 @@
 			-moz-box-shadow: 1px 1px 2px #555;
 			box-shadow: 1px 1px 2px #555;
 		}
-		.bigButton:hover
-		{
+
+		.bigButton:hover {
 			background-color: #FFE084;
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 224, 132)), color-stop(0.65, rgb(254,214,94)));
-			background: -moz-linear-gradient(center top,rgb(255, 224, 132)25%, rgb(254,214,94)65%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 224, 132)), color-stop(0.65, rgb(254, 214, 94)));
+			background: -moz-linear-gradient(center top, rgb(255, 224, 132) 25%, rgb(254, 214, 94) 65%);
 			-webkit-box-shadow: 1px 1px 3px #111;
 			-moz-box-shadow: 1px 1px 3px #111;
 			box-shadow: 1px 1px 3px #111;
 			color: #444;
 		}
-		.url{
+
+		.url {
 			font-size: 16px;
 			font-weight: bold;
 			color: #333;
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			border-radius: 5px;
+		}
+		.note {
+			font-size: 11px;
+			margin-top: 15px;
+			margin-bottom: 5px;
 		}
 	</style>
 </head>
@@ -100,10 +107,11 @@
 		Convert your html to a pdf that doesn't suck.
 	</h1>
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
+	<script>(function (d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
+		js = d.createElement(s);
+		js.id = id;
 		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
@@ -114,7 +122,7 @@
 
 	<h1>
 		What is this?</h1>
-	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.<br />
+	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.<br/>
 	It's primary usecase is for a webapplication to use it to generate pdf files, but use it for anything you like.
 
 	<h1>
@@ -123,25 +131,25 @@
 	<p>You just call <span class="code">http://html2pdf.it/pdf?url=[url_to_convert_to_pdf]</span></p>
 	<script type="text/javascript" src="spin.min.js"></script>
 	<script type="text/javascript">
-		function spinme(){
-		var opts = {
-			lines: 13, // The number of lines to draw
-			length: 30, // The length of each line
-			width: 14, // The line thickness
-			radius: 36, // The radius of the inner circle
-			rotate: 0, // The rotation offset
-			color: '#000', // #rgb or #rrggbb
-			speed: 1, // Rounds per second
-			trail: 60, // Afterglow percentage
-			shadow: false, // Whether to render a shadow
-			hwaccel: false, // Whether to use hardware acceleration
-			className: 'spinner', // The CSS class to assign to the spinner
-			zIndex: 2e9, // The z-index (defaults to 2000000000)
-			top: 'auto', // Top position relative to parent in px
-			left: 'auto' // Left position relative to parent in px
-		};
-		var target = document.getElementById('pdfForm');
-		var spinner = new Spinner(opts).spin(target);
+		function spinme() {
+			var opts = {
+				lines:13, // The number of lines to draw
+				length:30, // The length of each line
+				width:14, // The line thickness
+				radius:36, // The radius of the inner circle
+				rotate:0, // The rotation offset
+				color:'#000', // #rgb or #rrggbb
+				speed:1, // Rounds per second
+				trail:60, // Afterglow percentage
+				shadow:false, // Whether to render a shadow
+				hwaccel:false, // Whether to use hardware acceleration
+				className:'spinner', // The CSS class to assign to the spinner
+				zIndex:2e9, // The z-index (defaults to 2000000000)
+				top:'auto', // Top position relative to parent in px
+				left:'auto' // Left position relative to parent in px
+			};
+			var target = document.getElementById('pdfForm');
+			var spinner = new Spinner(opts).spin(target);
 		}
 	</script>
 	<div class="example" id="pdfForm" onsubmit="spinme()">
@@ -150,6 +158,10 @@
 			<input type="text" name="url" size="40" class="url" value="http://en.wikipedia.org/wiki/Api"/>
 			<input type="submit" class="bigButton" value="Get pdf!"/>
 		</form>
+		<div class="note">
+			PDF is generated from print media view.<br/>
+			The PDF-generator is sensitive to JavaScript errors, and will exit on the first error.
+		</div>
 	</div>
 	<h1>
 		What are the features?</h1>
@@ -171,7 +183,8 @@
 			on your web servers and you get a surge in people requesting pdf files, your entire website might become
 			slow.
 			That's why you should generate pdf files on separate application-servers. Using
-			html<span class="brand">2</span>pdf.<span class="brand">it</span>, my servers are those application-servers for you.
+			html<span class="brand">2</span>pdf.<span class="brand">it</span>, my servers are those application-servers
+			for you.
 		</li>
 		<li>Hey, I really need this myself.</li>
 	</ul>
@@ -190,7 +203,8 @@
 	You can use that to build your own service.
 
 	<div class="facebookLikeBox">
-		<div class="fb-like-box" data-href="http://www.facebook.com/html2pdf.it" data-width="600" data-height="200" data-show-faces="true" data-stream="false" data-header="false"></div>
+		<div class="fb-like-box" data-href="http://www.facebook.com/html2pdf.it" data-width="600" data-height="200"
+			 data-show-faces="true" data-stream="false" data-header="false"></div>
 	</div>
 	<script type="text/javascript">
 
@@ -199,20 +213,26 @@
 		_gaq.push(['_setDomainName', 'html2pdf.it']);
 		_gaq.push(['_trackPageview']);
 
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		(function () {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
 		})();
 
 	</script>
 
 	<script type="text/javascript">
 		var uvOptions = {};
-		(function() {
-			var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+		(function () {
+			var uv = document.createElement('script');
+			uv.type = 'text/javascript';
+			uv.async = true;
 			uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/AWpiT9Agoc24c5lY5sBug.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(uv, s);
 		})();
 	</script>
 
