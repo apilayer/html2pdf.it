@@ -8,9 +8,12 @@ if (process.platform == 'win32') {
 
 module.exports = function (http) {
 
-	http.get("/pdf", function (req, res, next) {
-		req.connection.setTimeout(2 * 60 * 1000); //two minute timeout
+	http.get("/", function (req, res, next) {
 		var url = req.param("url");
+		if(!url){
+			return next("route"); //skip to html view
+		}
+		req.connection.setTimeout(2 * 60 * 1000); //two minute timeout
 		var output = [], logOutput = [], errorOccurred = false;
 
 		var pdfProcess = spawn(path.join(__dirname, "/../../bin/", pdfExecutable), [

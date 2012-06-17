@@ -11,8 +11,8 @@ http.configure(function () {
 	http.use(gzippo.staticGzip(__dirname + '/public', {clientMaxAge:-1000 * 60 * 60 * 24}));
 });
 
-require("./websiteRoutes.js")(http);
 require("./webservices/pdf.js")(http);
+require("./websiteRoutes.js")(http);
 
 http.listen(config.http.port);
 console.log("Listening on http://localhost:" + config.http.port + "/");
