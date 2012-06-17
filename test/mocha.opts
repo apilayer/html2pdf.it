@@ -1,0 +1,4 @@
+--require ./test/global.js
+--reporter dot
+--ui bdd
+--recursive

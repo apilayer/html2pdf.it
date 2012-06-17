@@ -19,10 +19,14 @@
 	"devDependencies":{
 		"mocha":"",
 		"request":"",
-		"chai":""
+		"chai":"",
+		"injectr": "",
+		"sinon" : "",
+		"sinon-chai": "",
+		"underscore": ""
 	},
 	"scripts": {
 		"start": "node ./source/app.js",
-		"test": "node ./tests/runTests.js"
+		"test": "node ./runTests.js"
 	}
 }
