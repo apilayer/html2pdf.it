@@ -1,4 +1,5 @@
-
+"use strict";
+var app = require("../../lib/app.js");
 describe('pdf service', function() {
 
 	it('returns well formed pdf response', function(done) {
@@ -10,7 +11,7 @@ describe('pdf service', function() {
 			expect(res.headers["content-type"]).to.equal("application/pdf");
 			expect(body.substring(1, 4)).to.equal("PDF");
 			done();
-		})
+		});
 	});
 	it('returns an error when there are JS errors', function(done) {
 		this.timeout(180000);
@@ -19,6 +20,6 @@ describe('pdf service', function() {
 		request(url, function(err, res, body) {
 			expect(res.statusCode).to.equal(412);
 			done();
-		})
+		});
 	});
 });
