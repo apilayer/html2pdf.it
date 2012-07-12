@@ -8,7 +8,7 @@
   },
   "private": true,
   "engines": {
-    "node": ">=0.8.1",
+    "node": "~0.6.19",
     "npm": ">=1.1.9"
   },
   "main": "./source/app.js",
