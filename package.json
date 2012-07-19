@@ -9,7 +9,7 @@
 	"private":true,
 	"engines":{
 		"node":"0.8.x",
-		"npm":""
+		"npm":">=1.1.9"
 	},
 	"main":"./lib/app.js",
 	"dependencies":{
