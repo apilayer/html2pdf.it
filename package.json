@@ -8,8 +8,8 @@
 	},
 	"private":true,
 	"engines":{
-		"node":"~0.6.20",
-		"npm":">=1.1.9"
+		"node":"0.8.x",
+		"npm":""
 	},
 	"main":"./lib/app.js",
 	"dependencies":{
@@ -20,11 +20,11 @@
 		"mocha":"",
 		"request":"",
 		"chai":"",
-		"injectr":"",
+		"requiremock":"",
 		"sinon":"",
 		"sinon-chai":"",
 		"underscore":"",
-		"nodecoverage":"",
+		"nodecoverage":">=0.6.3",
 		"jshint":""
 	},
 	"scripts":{

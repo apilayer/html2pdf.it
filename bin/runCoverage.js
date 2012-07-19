@@ -3,9 +3,9 @@ process.env.NODE_ENV = "coverage";
 var nodecoverage = require("nodecoverage");
 nodecoverage({
 	instrument:["lib"],
-	copy:["test", "config", "public"]
+	requireBeforeRun:["lib/app.js"]
 }, function (err) {
-	if(err){
+	if (err) {
 		console.error(err);
 	}
 	process.exit();
