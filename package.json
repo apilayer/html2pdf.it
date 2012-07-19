@@ -13,7 +13,7 @@
 	},
 	"main":"./lib/app.js",
 	"dependencies":{
-		"express":"",
+		"express":"2.x.x",
 		"gzippo":""
 	},
 	"devDependencies":{
