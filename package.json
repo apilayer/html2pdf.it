@@ -1,35 +1,36 @@
 {
-	"author":"Allan Ebdrup",
-	"name":"html2pdf.it",
-	"version":"0.0.2",
-	"repository":{
-		"type":"git",
-		"url":"https://github.com/Muscula/html2pdf.it"
-	},
-	"private":true,
-	"engines":{
-		"node":"0.8.x",
-		"npm":">=1.1.9"
-	},
-	"main":"./lib/app.js",
-	"dependencies":{
-		"express":"2.x.x",
-		"gzippo":""
-	},
-	"devDependencies":{
-		"mocha":"",
-		"request":"",
-		"chai":"",
-		"requiremock":"",
-		"sinon":"",
-		"sinon-chai":"",
-		"underscore":"",
-		"nodecoverage":">=0.6.3",
-		"jshint":""
-	},
-	"scripts":{
-		"start":"node ./lib/app.js",
-		"test":"node ./bin/runTests.js"
-	},
-	"subdomain":"html2pdf"
+  "author": "Allan Ebdrup",
+  "name": "html2pdf.it",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Muscula/html2pdf.it"
+  },
+  "private": true,
+  "engines": {
+    "node": "0.8.x",
+    "npm": ">=1.1.9"
+  },
+  "main": "./lib/app.js",
+  "dependencies": {
+    "express": "2.x.x",
+    "gzippo": "",
+    "node-uuid": "~1.4.0"
+  },
+  "devDependencies": {
+    "mocha": "",
+    "request": "",
+    "chai": "",
+    "requiremock": "",
+    "sinon": "",
+    "sinon-chai": "",
+    "underscore": "",
+    "nodecoverage": ">=0.6.3",
+    "jshint": ""
+  },
+  "scripts": {
+    "start": "node ./lib/app.js",
+    "test": "node ./bin/runTests.js"
+  },
+  "subdomain": "html2pdf"
 }

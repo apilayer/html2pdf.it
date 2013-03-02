@@ -13,7 +13,7 @@ describe('pdf service', function() {
 			done();
 		});
 	});
-	it('returns an error when there are JS errors', function(done) {
+	xit('returns an error when there are JS errors', function(done) {
 		this.timeout(180000);
 		var pdfUrl = "http://localhost:" + config.http.port +"/javaScriptError.html";
 		var url = "http://localhost:" + config.http.port +"/?url=" + encodeURIComponent(pdfUrl);
