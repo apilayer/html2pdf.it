@@ -93,6 +93,7 @@
 			-moz-border-radius: 5px;
 			border-radius: 5px;
 		}
+
 		.note {
 			font-size: 11px;
 			margin-top: 15px;
@@ -123,7 +124,13 @@
 	<h1>
 		What is this?</h1>
 	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.<br/>
-	It's primary usecase is for a webapplication to use it to generate pdf files, but use it for anything you like.
+	It's primary use case is for a web application to use it to generate pdf files, but use it for anything you like.
+	<h1>
+		Want to see the source code?</h1>
+	<a href="https://github.com/Muscula/html2pdf.it">Here it is</a>
+	<a href="https://github.com/Muscula/html2pdf.it"><img style="position: absolute; top: 0; left: 0; border: 0;"
+	                                      src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"
+	                                      alt="Fork me on GitHub"></a>
 
 	<h1>
 		How does it work?</h1>
@@ -133,20 +140,20 @@
 	<script type="text/javascript">
 		function spinme() {
 			var opts = {
-				lines:13, // The number of lines to draw
-				length:30, // The length of each line
-				width:14, // The line thickness
-				radius:36, // The radius of the inner circle
-				rotate:0, // The rotation offset
-				color:'#000', // #rgb or #rrggbb
-				speed:1, // Rounds per second
-				trail:60, // Afterglow percentage
-				shadow:false, // Whether to render a shadow
-				hwaccel:false, // Whether to use hardware acceleration
-				className:'spinner', // The CSS class to assign to the spinner
-				zIndex:2e9, // The z-index (defaults to 2000000000)
-				top:'auto', // Top position relative to parent in px
-				left:'auto' // Left position relative to parent in px
+				lines: 13, // The number of lines to draw
+				length: 30, // The length of each line
+				width: 14, // The line thickness
+				radius: 36, // The radius of the inner circle
+				rotate: 0, // The rotation offset
+				color: '#000', // #rgb or #rrggbb
+				speed: 1, // Rounds per second
+				trail: 60, // Afterglow percentage
+				shadow: false, // Whether to render a shadow
+				hwaccel: false, // Whether to use hardware acceleration
+				className: 'spinner', // The CSS class to assign to the spinner
+				zIndex: 2e9, // The z-index (defaults to 2000000000)
+				top: 'auto', // Top position relative to parent in px
+				left: 'auto' // Left position relative to parent in px
 			};
 			var target = document.getElementById('pdfForm');
 			var spinner = new Spinner(opts).spin(target);
@@ -199,7 +206,7 @@
 
 	<div class="facebookLikeBox">
 		<div class="fb-like-box" data-href="http://www.facebook.com/html2pdf.it" data-width="600" data-height="200"
-			 data-show-faces="true" data-stream="false" data-header="false"></div>
+		     data-show-faces="true" data-stream="false" data-header="false"></div>
 	</div>
 	<script type="text/javascript">
 
@@ -218,19 +225,6 @@
 		})();
 
 	</script>
-
-	<script type="text/javascript">
-		var uvOptions = {};
-		(function () {
-			var uv = document.createElement('script');
-			uv.type = 'text/javascript';
-			uv.async = true;
-			uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/AWpiT9Agoc24c5lY5sBug.js';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(uv, s);
-		})();
-	</script>
-
 </div>
 </body>
 </html>
