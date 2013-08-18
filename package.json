@@ -13,19 +13,17 @@
   },
   "main": "./lib/app.js",
   "dependencies": {
-    "express": "2.x.x",
-    "gzippo": "",
+    "express": "3.x.x",
     "node-uuid": "~1.4.0"
   },
   "devDependencies": {
     "mocha": "",
     "request": "",
     "chai": "",
-    "requiremock": "",
     "sinon": "",
     "sinon-chai": "",
     "underscore": "",
-    "jshint": ""
+    "jshint": "0.x"
   },
   "scripts": {
     "start": "node ./lib/app.js",
