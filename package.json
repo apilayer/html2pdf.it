@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/Muscula/html2pdf.it"
   },
-  "private": true,
+  "private": false,
   "engines": {
     "node": "0.10.x"
   },
