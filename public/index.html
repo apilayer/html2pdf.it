@@ -1,230 +1,184 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Html2pdf that doesn't suck</title>
-	<style>
+	<meta charset="utf-8">
+	<title>html2pdf that doesn't suck</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Html2pdf that doesn't suck">
+	<meta name="author" content="Allan Ebdrup">
+
+	<!-- Le styles -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
 		body {
-			font-family: Verdana;
-			color: #333;
+			padding-top: 20px;
+			padding-bottom: 40px;
 		}
 
-		h1 {
-			font-size: 18px;
-		}
-
-		.code {
-			font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
-			color: blue;
-		}
-
-		.brand {
-			font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
-			color: red;
-		}
-
-		.brandHeading {
-			font-size: 60px;
-			font-weight: bold;
-		}
-
-		.content {
-			width: 800px;
+			/* Custom container */
+		.container-narrow {
 			margin: 0 auto;
+			max-width: 700px;
 		}
 
-		.author {
-			margin-top: -16px;
-			color: #666;
-			font-size: 14px;
+		.container-narrow > hr {
+			margin: 30px 0;
 		}
 
-		.example {
-			border-radius: 5px;
-			padding: 10px;
-			margin-left: 150px;
-			margin-right: 150px;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			background-color: #ddd;
-			border: 1px solid #aaa;
-		}
-
-		.facebookLikeBox {
-			margin-top: 30px;
+			/* Main marketing message and sign up button */
+		.jumbotron {
+			margin: 60px 0;
 			text-align: center;
 		}
 
-		.bigButton {
-			color: #555;
-			text-decoration: none;
-			font-size: 12px;
-			padding: 8px 8px 8px 8px;
-			border: solid 1px #FFF;
-			-webkit-border-radius: 10px;
-			-moz-border-radius: 10px;
-			border-radius: 10px;
-			color: #555;
-			background-color: #ffd65e;
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 214, 94)), color-stop(0.65, rgb(254, 191, 4)));
-			background: -moz-linear-gradient(center top, rgb(255, 214, 94) 25%, rgb(254, 191, 4) 65%);
-			font-weight: bold;
-			text-align: center;
-			cursor: pointer;
-			-webkit-box-shadow: 1px 1px 2px #555;
-			-moz-box-shadow: 1px 1px 2px #555;
-			box-shadow: 1px 1px 2px #555;
+		.jumbotron h1 {
+			font-size: 72px;
+			line-height: 1;
 		}
 
-		.bigButton:hover {
-			background-color: #FFE084;
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, rgb(255, 224, 132)), color-stop(0.65, rgb(254, 214, 94)));
-			background: -moz-linear-gradient(center top, rgb(255, 224, 132) 25%, rgb(254, 214, 94) 65%);
-			-webkit-box-shadow: 1px 1px 3px #111;
-			-moz-box-shadow: 1px 1px 3px #111;
-			box-shadow: 1px 1px 3px #111;
-			color: #444;
+		.jumbotron .btn, .jumbotron .input {
+			padding: 14px;
+			font-size: 21px;
 		}
 
-		.url {
-			font-size: 16px;
-			font-weight: bold;
-			color: #333;
-			-webkit-border-radius: 5px;
-			-moz-border-radius: 5px;
-			border-radius: 5px;
+		.jumbotron .btn {
+			padding: 14px 24px;
 		}
 
-		.note {
-			font-size: 11px;
-			margin-top: 15px;
-			margin-bottom: 5px;
+			/* Supporting marketing content */
+		.marketing {
+			margin: 60px 0;
+		}
+
+		.marketing p + h4 {
+			margin-top: 28px;
 		}
 	</style>
+	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="/js/html5shiv.js"></script>
+	<![endif]-->
+
 </head>
+
 <body>
-<div class="content">
-	<h1>
-		<div class="brandHeading">html<span class="brand">2</span>pdf.<span class="brand">it</span></div>
-		Convert your html to a pdf that doesn't suck.
-	</h1>
-	<div id="fb-root"></div>
-	<script>(function (d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s);
-		js.id = id;
-		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
 
-	<div class="author">
-		By Allan Ebdrup
+<div class="container-narrow">
+
+	<div class="masthead">
+		<h3 class="muted">html2pdf.it</h3>
 	</div>
 
-	<h1>
-		What is this?</h1>
-	This is a public API that has one purpose: Convert html from a given URL to a pdf that doesn't suck.<br/>
-	It's primary use case is for a web application to use it to generate pdf files, but use it for anything you like.
-	<h1>
-		Want to see the source code?</h1>
-	<a href="https://github.com/Muscula/html2pdf.it">Here it is</a>
-	<a href="https://github.com/Muscula/html2pdf.it"><img style="position: absolute; top: 0; left: 0; border: 0;"
-	                                      src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"
-	                                      alt="Fork me on GitHub"></a>
+	<hr>
 
-	<h1>
-		How does it work?</h1>
+	<div class="jumbotron">
+		<h1>html2pdf that doesn't suck</h1>
 
-	<p>You just call <span class="code">http://www.html2pdf.it/?url=[url_to_convert_to_pdf]</span></p>
-	<script type="text/javascript" src="spin.min.js"></script>
-	<script type="text/javascript">
-		function spinme() {
-			var opts = {
-				lines: 13, // The number of lines to draw
-				length: 30, // The length of each line
-				width: 14, // The line thickness
-				radius: 36, // The radius of the inner circle
-				rotate: 0, // The rotation offset
-				color: '#000', // #rgb or #rrggbb
-				speed: 1, // Rounds per second
-				trail: 60, // Afterglow percentage
-				shadow: false, // Whether to render a shadow
-				hwaccel: false, // Whether to use hardware acceleration
-				className: 'spinner', // The CSS class to assign to the spinner
-				zIndex: 2e9, // The z-index (defaults to 2000000000)
-				top: 'auto', // Top position relative to parent in px
-				left: 'auto' // Left position relative to parent in px
-			};
-			var target = document.getElementById('pdfForm');
-			var spinner = new Spinner(opts).spin(target);
-		}
-	</script>
-	<div class="example" id="pdfForm" onsubmit="spinme()">
-		<form method="GET" action="http://www.html2pdf.it/">
-			Type in URL to generate a pdf right now...<br/>
-			<input type="text" name="url" size="40" class="url" value="http://en.wikipedia.org/wiki/Api"/>
-			<input type="submit" class="bigButton" value="Get pdf!"/>
+		<div id="fb-root"></div>
+		<script>(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		<p class="lead">html2pdf.it is a webservice, just pass a URL and get a PDF rendering page.<br/>
+			All you need to do is call <code>http://www.html2pdf.it/?url=[url_to_convert_to_pdf]</code></p>
+
+		<script type="text/javascript" src="/js/spin.min.js"></script>
+		<script type="text/javascript">
+			function spinme() {
+				var opts = {
+					lines: 13, // The number of lines to draw
+					length: 30, // The length of each line
+					width: 14, // The line thickness
+					radius: 36, // The radius of the inner circle
+					rotate: 0, // The rotation offset
+					color: '#000', // #rgb or #rrggbb
+					speed: 1, // Rounds per second
+					trail: 60, // Afterglow percentage
+					shadow: false, // Whether to render a shadow
+					hwaccel: false, // Whether to use hardware acceleration
+					className: 'spinner', // The CSS class to assign to the spinner
+					zIndex: 2e9, // The z-index (defaults to 2000000000)
+					top: 'auto', // Top position relative to parent in px
+					left: 'auto' // Left position relative to parent in px
+				};
+				var target = document.getElementById('pdfForm');
+				var spinner = new Spinner(opts).spin(target);
+			}
+		</script>
+		<form id="pdfForm" class="form-inline" method="GET" action="/" onsubmit="spinme()">
+			<input name="url" type="text" class="input-xlarge input" placeholder="URL"
+			       value="http://en.wikipedia.org/wiki/Api">
+			<button type="submit" class="btn btn-large btn-success">Get PDF now!</button>
 		</form>
-		<div class="note">
-			PDF is generated from print media view.<br/>
-			The PDF-generator is sensitive to JavaScript errors, and will exit on the first error.
+	</div>
+
+	<hr>
+
+	<div class="row-fluid marketing">
+		<div class="span6">
+			<h4>Open source</h4>
+
+			<p>html2pdf.it is open source, <a href="https://github.com/Muscula/html2pdf.it">take a look at the code</a>,
+				fork it, run your own html2pdt.it server.</p>
+
+			<h4>Renders as a real browser</h4>
+
+			<p>CSS is interpreted byt the WebKit rendering engine, also used in Chrome and Safari. JavaScript is run as
+				if in a real browser.</p>
 		</div>
+		<div class="span6">
+			<h4>Nothing to install</h4>
+
+			<p>If you do not want to install and run your own servers, you are welcome to use html2pdf.it directly
+				here, by calling <code>http://www.html2pdf.it/?url=[url_to_convert_to_pdf]</code>. NOTE: if
+				the traffic ramps up to cost me a lot of money, this may turn into a paid service, or require donations
+			</p>
+			<h4>Contact?</h4>
+
+			<p>Drop me an email at <a href="mailto:allan@878.dk">allan@878.dk</a>
+			</p>
+		</div>
+
 	</div>
-	<h1>
-		What are the features?</h1>
-	A pdf that doesn't suck. The WebKit rendering engine is used (Chrome, Safari).
-	<ul>
-		<li>Selectable text in the pdf</li>
-		<li>Renders most HTML tags</li>
-		<li>Renders most CSS rules correctly</li>
-		<li>Javascript on the page is run (so you can use highcharts and the like)</li>
-		<li>Flash is not rendered</li>
-	</ul>
-	<h1>
-		Why should I use this?</h1>
-	<ul>
-		<li>Converting html to pdf is a fast and easy way to create beautiful pdf files, you loose a little control
-			over the exact layout. But you will be generating pdf files much faster than coding them by hand.
-		</li>
-		<li>When running a website pdf generation is a CPU and memory-heavy operation. If you do the pdf-generation
-			on your web servers and you get a surge in people requesting pdf files, your entire website might become
-			slow.
-			That's why you should generate pdf files on separate application-servers. Using
-			html<span class="brand">2</span>pdf.<span class="brand">it</span>, my servers are those application-servers
-			for you.
-		</li>
-		<li>Hey, I really need this myself.</li>
-	</ul>
-	<h1>
-		How stable is this service?</h1>
-	It's running on several load balanced application servers with fail over, the up-time should be high.
-	I'm ready to scale up the number of servers at the push of a button, it's in the cloud baby!
-	<h1>
-		Why is this free?</h1>
-	This is just an experiment to see if there is any interest in this kind of service. If there is a lot of interest
-	there will be some kind of payment for the service, to cover server costs. If not, just use it for free and enjoy.
 
-	<div class="facebookLikeBox">
-		<div class="fb-like-box" data-href="http://www.facebook.com/html2pdf.it" data-width="600" data-height="200"
-		     data-show-faces="true" data-stream="false" data-header="false"></div>
+	<hr>
+	<p class="text-center">
+
+	<div class="fb-like-box" data-href="http://www.facebook.com/html2pdf.it" data-width="200" data-height="100"
+	     data-show-faces="false" data-stream="false" data-header="false"></div>
+	</p>
+
+	<a href="https://github.com/Muscula/html2pdf.it"><img style="position: absolute; top: 0; left: 0; border: 0;"
+	                                                      src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"
+	                                                      alt="Fork me on GitHub"></a>
+
+	<div class="footer">
+		<p>html2pdf.it by <a href="http://dk.linkedin.com/in/ebdrup">Allan Ebdrup</a>, based on <a
+				href="http://phantomjs.org">PhantomJS</a></p>
 	</div>
-	<script type="text/javascript">
 
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-11089671-7']);
-		_gaq.push(['_setDomainName', 'html2pdf.it']);
-		_gaq.push(['_trackPageview']);
-
-		(function () {
-			var ga = document.createElement('script');
-			ga.type = 'text/javascript';
-			ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(ga, s);
-		})();
-
-	</script>
 </div>
+<!-- /container -->
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-11089671-7']);
+	_gaq.push(['_setDomainName', 'html2pdf.it']);
+	_gaq.push(['_trackPageview']);
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>
 </body>
 </html>
