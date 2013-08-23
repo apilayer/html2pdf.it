@@ -24,7 +24,8 @@ Node modules used
 ----------------
 - Routing etc. is done with `express`
 - Testing is done with `mocha`, `chai` and `sinon`, using BBD style tests.
+- JSHint is run on the JavaScript code
 
 Node version
 ------------
-Version 0.10+ of node.js is required (Domains are used for catching errors, and they where not really stable before 0.10)
+Version 0.10+ of node.js is required (Domains are used for catching errors, and domains where not really stable before 0.10)
