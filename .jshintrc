@@ -38,7 +38,7 @@
     "regexp": false,
     "undef": true,
     "sub": false,
-    "strict": true,
+    "strict": false,
     "bitwise" : true,
     "curly" : true,
     "latedef" : false,
