@@ -37,11 +37,14 @@
 		}
 
 		.jumbotron .input {
-			padding: 14px 6px;
-			font-size: 18px;
+			/*padding: 14px 6px;
+			font-size: 18px; */
+			font-size: 21px;
+			padding: 14px 24px;
+			text-align: center;
 		}
 
-		.jumbotron .btn {
+		.jumbotron .btn,  .jumbotron .add-on {
 			font-size: 21px;
 			padding: 14px 24px;
 		}
@@ -114,9 +117,12 @@
 			}
 		</script>
 		<form id="pdfForm" class="form-inline" method="GET" action="/" onsubmit="spinme()">
-			<input name="url" type="text" class="input-xlarge input" placeholder="URL"
-			       value="http://en.wikipedia.org/wiki/Api">
-			<button type="submit" class="btn btn-large btn-success">Get PDF now!</button>
+			<div class="input-prepend input-append">
+				<span class="add-on">Website</span>
+				<input id="url" name="url" type="text" class="input-large input" placeholder="URL"
+				       value="google.com">
+				<button type="submit" class="btn btn-large">Get PDF now!</button>
+			</div>
 		</form>
 	</div>
 
@@ -194,6 +200,7 @@
 </div>
 <!-- /container -->
 <script type="text/javascript">
+	document.getElementById("url").select();
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-11089671-7']);
 	_gaq.push(['_setDomainName', 'html2pdf.it']);
