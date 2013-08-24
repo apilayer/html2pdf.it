@@ -74,6 +74,58 @@ describe("setting up a test page", function () {
 			});
 		});
 
+		describe('getting a pdf of test page format A5', function () {
+			this.timeout(18000);
+			var response;
+			before(function (done) {
+				var url = "http://localhost:" + config.http.port + "/?url=" + encodeURIComponent(testUrl) + "&format=A5";
+				return request(url, function (err, resp) {
+					if (err) {
+						return done(err);
+					}
+					response = resp;
+					return done();
+				});
+			});
+
+			it('should return statusCode 200', function () {
+				expect(response, response.body).to.have.property("statusCode", 200);
+			});
+
+			it('should return application/pdf as content-type', function () {
+				expect(response.headers).to.have.property("content-type", "application/pdf");
+			});
+
+			it('should return content that looks like binary PDF', function () {
+				expect(response.body.substring(1, 4)).to.equal("PDF");
+			});
+		});
+
+		describe('getting a pdf of test page invalid format', function () {
+			this.timeout(18000);
+			var response;
+			before(function (done) {
+				var url = "http://localhost:" + config.http.port + "/?url=" + encodeURIComponent(testUrl) + "&format=INVALID";
+				return request(url, function (err, resp) {
+					if (err) {
+						return done(err);
+					}
+					response = resp;
+					return done();
+				});
+			});
+
+			it('should return statusCode 400', function () {
+				expect(response, response.body).to.have.property("statusCode", 400);
+			});
+
+			it('should return correct error message', function () {
+				expect(response.body).to.equal(
+					"Invalid format, the following are supported: A3, A4, A5, Legal, Letter, Tabloid"
+				);
+			});
+		});
+
 		describe('getting a pdf of a pdf of test page', function () {
 			this.timeout(18000);
 			var response;
