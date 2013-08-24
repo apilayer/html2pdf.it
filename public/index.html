@@ -38,17 +38,29 @@
 		}
 
 		.jumbotron .input {
-			font-size: 21px;
-			padding: 14px 24px;
 			text-align: center;
 		}
 
-		.jumbotron .btn, .jumbotron .add-on {
-			font-size: 21px;
-			padding: 14px 24px;
+		@media (min-width: 500px) {
+			#pdfForm {
+				-webkit-transform: scale(1.2);
+				-moz-transform:    scale(1.2);
+				-ms-transform:     scale(1.2);
+				-o-transform:      scale(1.2);
+				transform: scale(1.2);
+			}
 		}
 
-			/* Supporting marketing content */
+		@media (min-width: 700px) {
+			#pdfForm {
+				-webkit-transform: scale(1.5);
+				-moz-transform:    scale(1.5);
+				-ms-transform:     scale(1.5);
+				-o-transform:      scale(1.5);
+				transform: scale(1.5);
+			}
+		}
+
 		.marketing {
 			margin: 60px 0;
 		}
@@ -116,7 +128,7 @@
 				<span class="add-on">Webpage</span>
 				<input id="url" name="url" type="text" class="input-large input" placeholder="URL"
 				       value="google.com">
-				<button type="submit" class="btn btn-large">Get PDF now!</button>
+				<button type="submit" class="btn">Get PDF now!</button>
 			</div>
 		</form>
 		<p class="lead">The pdf will be made as when you print a webpage to a printer. Some webpages have not been
