@@ -15,7 +15,24 @@
 			padding-bottom: 40px;
 		}
 
-			/* Custom container */
+		.hidden {
+			display: none;
+		}
+
+		.format {
+			padding: 5px;
+			-webkit-transform: scale(0.6);
+			-moz-transform: scale(0.6);
+			-ms-transform: scale(0.6);
+			-o-transform: scale(0.6);
+			transform: scale(0.6);
+		}
+		.format .btn-group:first-child {
+			margin-right: 19px;
+		}
+		.format .btn-group:last-child {
+			margin-left: 19px;
+		}
 		.container-narrow {
 			margin: 0 auto;
 			max-width: 700px;
@@ -33,22 +50,22 @@
 
 		.jumbotron h1 {
 			line-height: 1;
-			padding-bottom: 18px;
+			padding-bottom: 40px;
 		}
 
 		.jumbotron .input {
 			text-align: center;
 		}
-
 		@media (min-width: 500px) {
 			.jumbotron h1 {
 				font-size: 50px;
 			}
+
 			#pdfForm {
 				-webkit-transform: scale(1.2);
-				-moz-transform:    scale(1.2);
-				-ms-transform:     scale(1.2);
-				-o-transform:      scale(1.2);
+				-moz-transform: scale(1.2);
+				-ms-transform: scale(1.2);
+				-o-transform: scale(1.2);
 				transform: scale(1.2);
 			}
 		}
@@ -57,11 +74,12 @@
 			.jumbotron h1 {
 				font-size: 72px;
 			}
+
 			#pdfForm {
 				-webkit-transform: scale(1.5);
-				-moz-transform:    scale(1.5);
-				-ms-transform:     scale(1.5);
-				-o-transform:      scale(1.5);
+				-moz-transform: scale(1.5);
+				-ms-transform: scale(1.5);
+				-o-transform: scale(1.5);
 				transform: scale(1.5);
 			}
 		}
@@ -135,9 +153,28 @@
 				       value="google.com">
 				<button type="submit" class="btn">Get PDF now!</button>
 			</div>
+			<div id="format" class="hidden format">
+				<div class="btn-group" data-toggle-name="format" data-toggle="buttons-radio">
+					<button type="button" disabled class="btn">format</button>
+					<button type="button" value="A3" class="btn" data-toggle="button">A3</button>
+					<button type="button" value="A4" class="btn" data-toggle="button">A4</button>
+					<button type="button" value="A5" class="btn" data-toggle="button">A5</button>
+					<button type="button" value="Legal" class="btn" data-toggle="button">Legal</button>
+					<button type="button" value="Letter" class="btn" data-toggle="button">Letter</button>
+					<button type="button" value="Tabloid" class="btn" data-toggle="button">Tabloid</button>
+				</div>
+				<div class="btn-group" data-toggle-name="orientation" data-toggle="buttons-radio">
+					<button type="button" disabled class="btn">orientation</button>
+					<button type="button" value="portrait" class="btn" data-toggle="button">portrait</button>
+					<button type="button" value="landscape" class="btn" data-toggle="button">landscape</button>
+				</div>
+			</div>
+			<input type="hidden" name="format" value="A4"/>
+			<input type="hidden" name="orientation" value="portrait"/>
 		</form>
 		<p class="lead">The pdf will be made as when you print a webpage to a printer. Some webpages have not been
 			optimized for printing and will not look pretty</code></p>
+
 	</div>
 
 	<hr>
@@ -220,8 +257,35 @@
 
 </div>
 <!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript">
 	document.getElementById("url").select();
+	jQuery && jQuery(function ($) {
+		$('div.btn-group').each(function () {
+			var group = $(this);
+			var form = group.parents('form').eq(0);
+			var name = group.attr('data-toggle-name');
+			var hidden = $('input[name="' + name + '"]', form);
+			$('button', group).each(function () {
+				var button = $(this);
+				button.on('click', function () {
+					hidden.val($(this).val());
+					$('button', group).each(function () {
+						var button = $(this);
+						if (button.val() === hidden.val()) {
+							button.addClass('active');
+						} else {
+							button.removeClass('active');
+						}
+					});
+				});
+				if (button.val() === hidden.val()) {
+					button.addClass('active');
+				}
+			});
+		});
+		$('#format').removeClass("hidden");
+	});
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-11089671-7']);
 	_gaq.push(['_setDomainName', 'html2pdf.it']);
