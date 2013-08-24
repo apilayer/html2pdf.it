@@ -1,7 +1,7 @@
 {
   "author": "Allan Ebdrup",
   "name": "html2pdf.it",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Muscula/html2pdf.it"
@@ -13,11 +13,11 @@
   "main": "./lib/app.js",
   "dependencies": {
     "express": "3.x.x",
-    "node-uuid": "~1.4.0"
+    "node-uuid": "~1.4.0",
+    "request": ""
   },
   "devDependencies": {
     "mocha": "",
-    "request": "",
     "chai": "",
     "sinon": "",
     "sinon-chai": "",

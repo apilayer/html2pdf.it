@@ -73,5 +73,30 @@ describe("setting up a test page", function () {
 				expect(response.body.substring(1, 4)).to.equal("PDF");
 			});
 		});
+
+		describe('getting a pdf of a pdf of test page', function () {
+			this.timeout(18000);
+			var response;
+			before(function (done) {
+				var pdfUrl = "http://localhost:" + config.http.port + "/?url=" + encodeURIComponent(testUrl);
+				var url = "http://localhost:" + config.http.port + "/?url=" + encodeURIComponent(pdfUrl);
+				return request(url, function (err, resp) {
+					if (err) {
+						return done(err);
+					}
+					response = resp;
+					return done();
+				});
+			});
+
+			it('should return statusCode 400', function () {
+				expect(response, response.body).to.have.property("statusCode", 400);
+			});
+
+			it('should return error message', function () {
+				expect(response.body).to.equal("Cannot get http://localhost:8080/?url=localhost%3A8080%2Ftest:" +
+					" returns content type application/pdf. You must point html2pdf.it to HTML or TEXT content");
+			});
+		});
 	});
 });
