@@ -34,11 +34,10 @@
 		.jumbotron h1 {
 			font-size: 72px;
 			line-height: 1;
+			padding-bottom: 18px;
 		}
 
 		.jumbotron .input {
-			/*padding: 14px 6px;
-			font-size: 18px; */
 			font-size: 21px;
 			padding: 14px 24px;
 			text-align: center;
@@ -72,13 +71,13 @@
 <div class="container-narrow">
 
 	<div class="masthead">
-		<h3 class="muted">html2pdf.it</h3>
+		<h3 class="muted">html2pdf.it - Full HTML, CSS and JavaScript supported.</h3>
 	</div>
 
 	<hr>
 
 	<div class="jumbotron">
-		<h1>html2pdf that doesn't suck</h1>
+		<h1>Webpages as PDF</h1>
 
 		<div id="fb-root"></div>
 		<script>(function (d, s, id) {
@@ -89,9 +88,6 @@
 			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-
-		<p class="lead">html2pdf.it is a webservice, just pass a URL and get a PDF rendering.</p>
-
 		<script type="text/javascript" src="/js/spin.min.js"></script>
 		<script type="text/javascript">
 			function spinme() {
@@ -117,13 +113,13 @@
 		</script>
 		<form id="pdfForm" class="form-inline" method="GET" action="/" onsubmit="spinme()">
 			<div class="input-prepend input-append">
-				<span class="add-on">Website</span>
+				<span class="add-on">Webpage</span>
 				<input id="url" name="url" type="text" class="input-large input" placeholder="URL"
 				       value="google.com">
 				<button type="submit" class="btn btn-large">Get PDF now!</button>
 			</div>
 		</form>
-		<p class="lead">The pdf will be made as when you print a website to a printer. Some websites have not been
+		<p class="lead">The pdf will be made as when you print a webpage to a printer. Some webpages have not been
 			optimized for printing and will not look pretty</code></p>
 	</div>
 
