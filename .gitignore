@@ -16,6 +16,7 @@ node_modules
 pids
 logs
 results
+tmp/*.pdf
 
 npm-debug.log
 
