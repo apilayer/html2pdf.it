@@ -94,6 +94,10 @@
 				transform: scale(1.5);
 			}
 		}
+
+		.contents {
+			margin: 0 30px;
+		}
 	</style>
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -185,33 +189,41 @@
 
 	<hr>
 
+</div>
+<!-- /container -->
+
+<div class="contents">
 	<div class="row-fluid">
-		<div class="span6">
+		<div class="span3">
 			<h4>Renders FULL HTML5 and CSS3</h4>
 
 			<p>HTML and CSS is interpreted by the WebKit rendering engine, also used in Chrome, Safari and Opera.</p>
+		</div>
+		<div class="span3">
 			<h4>Runs JavaScript on the page</h4>
 
 			<p>JavaScript on the page is run as if in a browser.</p>
 		</div>
-		<div class="span6">
+		<div class="span3">
 			<h4>Open source</h4>
 
 			<p>html2pdf.it is open source, <a href="https://github.com/Muscula/html2pdf.it">take a look at the code</a>.
 				Fork it and run your own html2pdf.it server.</p>
 
+		</div>
+		<div class="span3">
 			<h4>Build with node.js</h4>
 
 			<p>The technology used is node.js.</p>
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span12">
+		<div class="span6">
 			<h4>Headers & footers</h4>
 
 			<p>You add headers and footers to the PDF by inserting a script in the HTML of the web page. Below is an
 				example with page numbers in footer and header (You have to own the web page and modify it).
-				<pre class="code">
+				<pre class="code" style="max-width: 600px;">
 &lt;script type="text/javascript"&gt;
 //setting up headers and footers for html2pdf
 var html2pdf = {
@@ -233,20 +245,18 @@ var html2pdf = {
 			The <code>contents</code> properties can also just contain a string.
 			</p>
 		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span6">
+		<div class="span3">
 			<h4>Nothing to install</h4>
 
 			<p>If you do not want to install and run your own servers, you are welcome to use html2pdf.it directly:
-				<code>http://www.html2pdf.it/?url=[your_url]</code>.
+				<code>www.html2pdf.it/?url=[url]</code>.
 			</p>
 
 			<p>If the traffic ramps up to cost me a lot of money, this may turn into a paid service, or require
 				donations. Running your own server will always be free.
 			</p>
 		</div>
-		<div class="span6">
+		<div class="span3">
 			<h4>Use it in your web application</h4>
 
 			<p>A good use for html2pdf.it is to use it as a service in your own web application, phone app etc. Turn
@@ -258,11 +268,11 @@ var html2pdf = {
 			<p>Drop me an email at <a href="mailto:allan@878.dk">allan@878.dk</a>
 			</p>
 		</div>
-
 	</div>
 
+
 	<hr>
-	<div class="row-fluid marketing">
+	<div class="row-fluid">
 
 
 		<div class="span6">
@@ -292,13 +302,11 @@ var html2pdf = {
 	                                                      src="/img/forkme_left_red_aa0000.png"
 	                                                      alt="Fork me on GitHub"></a>
 
-	<div class="footer">
+	<footer class="footer">
 		<p>html2pdf.it by <a href="http://dk.linkedin.com/in/ebdrup">Allan Ebdrup</a>, based on <a
 				href="http://phantomjs.org">PhantomJS</a></p>
-	</div>
-
+	</footer>
 </div>
-<!-- /container -->
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script type="text/javascript">
 	var html2pdf = {
