@@ -15,8 +15,11 @@
 			padding-bottom: 40px;
 		}
 
-		.hidden {
-			display: none;
+		#optionsButton {
+			margin-right: 37px;
+			margin-left: -90px;
+			margin-top: -16px;
+			float: right;
 		}
 
 		.format {
@@ -27,12 +30,15 @@
 			-o-transform: scale(0.6);
 			transform: scale(0.6);
 		}
+
 		.format .btn-group:first-child {
 			margin-right: 19px;
 		}
+
 		.format .btn-group:last-child {
 			margin-left: 19px;
 		}
+
 		.container-narrow {
 			margin: 0 auto;
 			max-width: 700px;
@@ -56,6 +62,11 @@
 		.jumbotron .input {
 			text-align: center;
 		}
+
+		.jumbotron .lead{
+			margin-top: 30px;
+		}
+
 		@media (min-width: 500px) {
 			.jumbotron h1 {
 				font-size: 50px;
@@ -153,7 +164,7 @@
 				       value="www.html2pdf.it">
 				<button type="submit" class="btn">Get PDF now!</button>
 			</div>
-			<div id="format" class="hidden format">
+			<div id="format" class="format" style="display:none">
 				<div class="btn-group" data-toggle-name="format" data-toggle="buttons-radio">
 					<button type="button" disabled class="btn">format</button>
 					<button type="button" value="A3" class="btn" data-toggle="button">A3</button>
@@ -172,6 +183,7 @@
 			<input type="hidden" name="format" value="A4"/>
 			<input type="hidden" name="orientation" value="portrait"/>
 		</form>
+		<button id="optionsButton" type="button" class="hidden btn btn-link">options</button>
 		<p class="lead">The pdf will be made as when you print a webpage to a printer. Some webpages have not been
 			optimized for printing and will not look pretty</code></p>
 
@@ -257,7 +269,7 @@
 
 </div>
 <!-- /container -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
 <script type="text/javascript">
 	document.getElementById("url").select();
 	jQuery && jQuery(function ($) {
@@ -284,7 +296,13 @@
 				}
 			});
 		});
-		$('#format').removeClass("hidden");
+		$('#optionsButton').on("click", function () {
+			$("#optionsButton").hide(200, function () {
+				$('#format').show(200);
+			});
+
+		});
+		$('#optionsButton').removeClass("hidden");
 	});
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-11089671-7']);
