@@ -6,19 +6,24 @@ See it in action at: [html2pdf.it](http://www.html2pdf.it).
 
 Ready to fork and push to heroku (where I run it).
 
-Works out of the box on both windows and linux.
+Works out of the box on both windows and ubuntu.
 
 On Mac you need to
 ```
 brew install phantomjs
 ```
 
+Running webserver
+-----------
+```
+node lib/app.js
+```
+
 Running tests
 -----------
-Just type
 ```
 npm test
-````
+```
 
 Node modules used
 ----------------
