@@ -235,7 +235,7 @@
 
 			<p>You add headers and footers to the PDF by inserting a script in the HTML of the web page. Below is an
 				example with page numbers in footer and header (You have to own the web page and modify it).
-				<pre class="code" style="max-width: 600px;">
+				<pre class="code" style="max-width: 620px;">
 &lt;script type="text/javascript"&gt;
 //setting up headers and footers for html2pdf
 var html2pdf = {
@@ -250,7 +250,8 @@ var html2pdf = {
  }
 };
 &lt;/script&gt;</pre>
-			The <code>contents</code> properties can also just contain a string.
+			<code>{{pageNumber}}</code> will be replaced with <code>1</code> on page 1, <code>2</code> on page 2 and
+			so on. <code>{{totalPages}}</code> will be replaced by the total count of pages in the PDF.
 			</p>
 		</div>
 		<div class="span3">
