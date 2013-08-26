@@ -98,6 +98,15 @@
 		.contents {
 			margin: 0 30px;
 		}
+
+		.fb-like {
+			width: 52px !important;
+			margin: 0 26px 0 0;
+			padding: 0;
+			position: relative;
+			display: inline-block;
+			top: -3px;
+		}
 	</style>
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -122,16 +131,19 @@
 		<h1>Web pages as PDF</h1>
 
 		<div id="fb-root"></div>
-		<script>(function (d, s, id) {
-			if (document.location.href.indexOf("html2pdf.it") !== -1) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
-				fjs.parentNode.insertBefore(js, fjs);
-			}
-		}(document, 'script', 'facebook-jssdk'));</script>
+		<script>
+			var loadSocial = false;
+			(function (d, s, id) {
+				if (loadSocial || document.location.href.indexOf("html2pdf.it") !== -1) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 		<script type="text/javascript" src="/js/spin.min.js"></script>
 		<script type="text/javascript">
 			function spinme() {
@@ -272,18 +284,16 @@ var html2pdf = {
 
 
 	<hr>
-	<div class="row-fluid">
+	<div>
 
 
-		<div class="span6">
-			<div class="fb-like-box" data-href="http://www.facebook.com/html2pdf.it" data-width="200" data-height="100"
-			     data-show-faces="false" data-stream="false" data-header="false"></div>
-		</div>
-		<div class="span6">
+		<div class="">
+			<div class="fb-like" data-href="http://www.facebook.com/html2pdf.it" data-send='false'
+			     data-layout='button_count' data-width='52' data-show-faces='false'></div>
 			<a href="https://twitter.com/html2pdfit" class="twitter-follow-button" data-show-count="false"
 			   data-size="large">Follow @html2pdfit</a>
 			<script>
-				if (document.location.href.indexOf("html2pdf.it") !== -1) {
+				if (loadSocial || document.location.href.indexOf("html2pdf.it") !== -1) {
 					!function (d, s, id) {
 						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
 						if (!d.getElementById(id)) {
