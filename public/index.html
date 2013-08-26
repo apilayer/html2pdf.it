@@ -241,17 +241,13 @@
 var html2pdf = {
  header: {
   height: "1cm",
-  contents: function (pageNum, numPages) {
-   //Note the 'center' css class is defined in the stylesheet of the page.
-   return '&lt;div class="center"&gt;page ' + pageNum + ' of ' + numPages +'&lt;/div&gt;';
-  }
+  contents: '&lt;div class="center"&gt;page {{pageNumber}} of {{totalPages}}&lt;/div&gt;'
  },
  footer: {
   height: "1cm",
-   contents: function (pageNum, numPages) {
-    return '&lt;div class="center"&gt;page ' + pageNum + ' of ' + numPages +'&lt;/div&gt;';
-   }
+  contents: '&lt;div class="center"&gt;page {{pageNumber}} of {{totalPages}}&lt;/div&gt;'
   }
+ }
 };
 &lt;/script&gt;</pre>
 			The <code>contents</code> properties can also just contain a string.
@@ -322,15 +318,11 @@ var html2pdf = {
 	var html2pdf = {
 		header: {
 			height: "1cm",
-			contents: function (pageNum, numPages) {
-				return '<div class="center">page ' + pageNum + ' of ' + numPages + '</div>';
-			}
+			contents: '<div class="center">page {{pageNumber}} of {{totalPages}}</div>'
 		},
 		footer: {
 			height: "1cm",
-			contents: function (pageNum, numPages) {
-				return '<div class="center">page ' + pageNum + ' of ' + numPages + '</div>';
-			}
+			contents: '<div class="center">page {{pageNumber}} of {{totalPages}}</div>'
 		}
 	};
 	jQuery && jQuery(function ($) {
