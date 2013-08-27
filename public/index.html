@@ -18,12 +18,14 @@
 		#optionsButton {
 			margin-right: 37px;
 			margin-left: -110px;
-			margin-top: -16px;
+			margin-top: -25px;
 			float: right;
 		}
 
-		.format {
-			padding: 5px;
+		#pdfInput {
+			margin-bottom: 8px;
+		}
+		.options {
 			-webkit-transform: scale(0.6);
 			-moz-transform: scale(0.6);
 			-ms-transform: scale(0.6);
@@ -31,11 +33,11 @@
 			transform: scale(0.6);
 		}
 
-		.format .btn-group:first-child {
+		.options .btn-group:first-child {
 			margin-right: 19px;
 		}
 
-		.format .btn-group:last-child {
+		.options .btn-group:last-child {
 			margin-left: 19px;
 		}
 
@@ -64,7 +66,7 @@
 		}
 
 		.jumbotron .lead {
-			margin-top: 30px;
+			margin-top: 21px;
 		}
 
 		@media (min-width: 500px) {
@@ -132,49 +134,28 @@
 
 		<div id="fb-root"></div>
 		<script>
-			var loadSocial = false;
-			(function (d, s, id) {
-				if (loadSocial || document.location.href.indexOf("html2pdf.it") !== -1) {
+			var loadSocial = document.location.href.indexOf("html2pdf.it") !== -1;
+			if (loadSocial) {
+				(function (d, s, id) {
+
 					var js, fjs = d.getElementsByTagName(s)[0];
 					if (d.getElementById(id)) return;
 					js = d.createElement(s);
 					js.id = id;
 					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
 					fjs.parentNode.insertBefore(js, fjs);
-				}
 			}(document, 'script', 'facebook-jssdk'));
-		</script>
-		<script type="text/javascript" src="/js/spin.min.js"></script>
-		<script type="text/javascript">
-			function spinme() {
-				var opts = {
-					lines: 13, // The number of lines to draw
-					length: 30, // The length of each line
-					width: 14, // The line thickness
-					radius: 36, // The radius of the inner circle
-					rotate: 0, // The rotation offset
-					color: '#000', // #rgb or #rrggbb
-					speed: 1, // Rounds per second
-					trail: 60, // Afterglow percentage
-					shadow: false, // Whether to render a shadow
-					hwaccel: false, // Whether to use hardware acceleration
-					className: 'spinner', // The CSS class to assign to the spinner
-					zIndex: 2e9, // The z-index (defaults to 2000000000)
-					top: 'auto', // Top position relative to parent in px
-					left: 'auto' // Left position relative to parent in px
-				};
-				var target = document.getElementById('pdfForm');
-				var spinner = new Spinner(opts).spin(target);
 			}
 		</script>
-		<form id="pdfForm" class="form-inline" method="GET" action="/" onsubmit="spinme()">
-			<div class="input-prepend input-append">
+		<iframe id="downloadFrame" style="display:none"></iframe>
+		<form id="pdfForm" class="form-inline" method="GET" action="/">
+			<div id="pdfInput" class="input-prepend input-append">
 				<span class="add-on">Web page</span>
 				<input id="url" name="url" type="text" class="input-large input" placeholder="URL"
 				       value="www.html2pdf.it">
-				<button type="submit" class="btn">Get PDF now!</button>
+				<button type="submit" class="btn" id="getPdfButton">Get PDF now!</button>
 			</div>
-			<div id="format" class="format" style="display:none">
+			<div id="options" class="options" style="display:none">
 				<div class="btn-group" data-toggle-name="format" data-toggle="buttons-radio">
 					<button type="button" disabled class="btn">format</button>
 					<button type="button" value="A3" class="btn" data-toggle="button">A3</button>
@@ -190,7 +171,16 @@
 					<button type="button" value="landscape" class="btn" data-toggle="button">landscape</button>
 				</div>
 			</div>
+			<div id="options2" class="options" style="display:none">
+				<div class="btn-group" data-toggle-name="download" data-toggle="buttons-radio">
+					<button type="button" disabled class="btn">open</button>
+					<button type="button" value="false" class="btn" data-toggle="button">show in browser</button>
+					<button type="button" value="true" class="btn" data-toggle="button">download as file</button>
+				</div>
+			</div>
+			<input id="doDownload" type="hidden" name="download" value="false"/>
 			<input type="hidden" name="format" value="A4"/>
+			<input type="hidden" name="downloadToken" id="downloadToken"/>
 			<input type="hidden" name="orientation" value="portrait"/>
 		</form>
 		<button id="optionsButton" type="button" class="hidden btn btn-link">options</button>
@@ -290,7 +280,7 @@ var html2pdf = {
 			<a href="https://twitter.com/html2pdfit" class="twitter-follow-button" data-show-count="false"
 			   data-size="large">Follow @html2pdfit</a>
 			<script>
-				if (loadSocial || document.location.href.indexOf("html2pdf.it") !== -1) {
+				if (loadSocial) {
 					!function (d, s, id) {
 						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
 						if (!d.getElementById(id)) {
@@ -315,6 +305,8 @@ var html2pdf = {
 	</footer>
 </div>
 <script src="/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/js/spin.min.js"></script>
+<script type="text/javascript" src="/js/spinOnDownload.js"></script>
 <script type="text/javascript">
 	var html2pdf = {
 		header: {
@@ -354,7 +346,8 @@ var html2pdf = {
 		});
 		$('#optionsButton').on("click", function () {
 			$("#optionsButton").hide(200, function () {
-				$('#format').show(200);
+				$('#options').show(200);
+				$('#options2').show(200);
 			});
 
 		});

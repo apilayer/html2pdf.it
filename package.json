@@ -12,9 +12,10 @@
   },
   "main": "./lib/app.js",
   "dependencies": {
-    "express": "3.x.x",
+    "express": "3.x",
     "node-uuid": "~1.4.0",
-    "request": ""
+    "request": "",
+    "slugify-url": "~1.0"
   },
   "devDependencies": {
     "mocha": "",
