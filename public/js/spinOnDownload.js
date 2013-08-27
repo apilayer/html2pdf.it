@@ -25,9 +25,9 @@
 			top: 'auto', // Top position relative to parent in px
 			left: 'auto' // Left position relative to parent in px
 		};
-		var target = document.getElementById('pdfForm');
+		var spinTarget = document.getElementById('pdfForm');
 		spinner = (spinner || (Spinner && new Spinner(opts)));
-		spinner && spinner.spin(target);
+		spinner && spinner.spin(spinTarget);
 		var downloadTimer;
 		var attempts = 2 * 60;
 		return blockResubmit();
