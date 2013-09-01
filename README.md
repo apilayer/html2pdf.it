@@ -13,6 +13,12 @@ On Mac you need to
 brew install phantomjs
 ```
 
+To get started you need to clone the repository, cd to it and run
+-----------
+```
+npm install
+```
+
 Running webserver
 -----------
 ```
