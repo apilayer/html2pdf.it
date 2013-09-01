@@ -28,7 +28,7 @@ npm test
 Node modules used
 ----------------
 - Routing etc. is done with `express`
-- Testing is done with `mocha`, `chai` and `sinon`, using BBD style tests.
+- Testing is done with `mocha`, `chai` and `sinon`, using BDD style tests.
 - JSHint is run on the JavaScript code
 
 Node version
