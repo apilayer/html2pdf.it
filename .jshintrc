@@ -15,10 +15,12 @@
         "after",
         "waits",
         "waitsFor",
-        "runs"
+        "runs",
+	    "html2pdf"
     ],
 
-    "node" : true,
+	"node" : true,
+	"browser" : true,
     "boss" : false,
     "curly": true,
     "debug": false,

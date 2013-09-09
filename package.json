@@ -15,7 +15,8 @@
     "express": "3.x",
     "node-uuid": "~1.4.0",
     "request": "",
-    "slugify-url": "~1.0"
+    "slugify-url": "~1.0",
+    "phantom": "~0.5.2"
   },
   "devDependencies": {
     "mocha": "",
