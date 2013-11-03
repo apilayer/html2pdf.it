@@ -25,6 +25,12 @@ Running webserver
 node lib/app.js
 ```
 
+If you want to host html2pdf.it yourself, you will have to ask your host if they support hosting Node.js applications.
+Node.js is still new, so a lot of hosts don't support it. 
+
+If your host does not support Node.js. You need to find a new host
+that does. Heroku.com or nodejitsu.com for example.
+
 Running tests
 -----------
 ```
