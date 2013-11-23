@@ -8,11 +8,9 @@
         "before",
         "after",
         "afterEach",
-	    "document",
-	    "phantom",
-	    "window",
-	    "html2pdf",
-	    ""
+	    "request",
+	    "config",
+	    "_"
     ],
 	"asi" : false,
 	"bitwise" : true,

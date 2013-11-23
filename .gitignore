@@ -1,4 +1,6 @@
-lib-cov
+tmp/*.pdf
+node_modules
+npm-debug.log
 *.seed
 *.log
 *.dat
@@ -10,15 +12,3 @@ lib-cov
 *.sublime-project
 *.sublime-workspace
 *.orig
-
-node_modules
-
-pids
-logs
-results
-tmp/*.pdf
-
-npm-debug.log
-
-.coverage
-coverageReport.html

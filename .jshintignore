@@ -1,1 +1,3 @@
-lib/rasterize.js
+node_modules
+public
+test

@@ -137,7 +137,7 @@ describe("headers and footers", function () {
 				});
 
 				it('should return validation error', function () {
-					expect(response.body.replace("\r", "")).to.equal("html2pdf.header.height has wrong type: null\n");
+					expect(response.body).to.contain("html2pdf.header.height has wrong type: null");
 				});
 			});
 		});
@@ -183,7 +183,7 @@ describe("headers and footers", function () {
 				});
 
 				it('should return validation error', function () {
-					expect(response.body.replace("\r", "")).to.equal("html2pdf.header.contents has wrong type: null\n");
+					expect(response.body).to.contain("html2pdf.header.contents has wrong type: null");
 				});
 			});
 		});
