@@ -1,1 +1,1 @@
-require('mocha-jshint')(['.','test']);
+require('mocha-jshint')();

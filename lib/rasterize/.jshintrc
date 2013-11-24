@@ -1,4 +1,9 @@
 {
+    "predef": [
+ 	    "phantom",
+	    "html2pdf"
+    ],
+	"browser": true,
 	"asi" : false,
 	"bitwise" : true,
 	"boss" : false,
