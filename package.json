@@ -36,9 +36,6 @@
   "bugs": {
     "url": "https://github.com/Muscula/html2pdf.it/issues"
   },
-  "bin": {
-    "html2pdf.it": "runTests.js"
-  },
   "directories": {
     "test": "test"
   },
