@@ -63,7 +63,6 @@
 			setCursor("wait", "wait");
 			downloadTimer = window.setInterval(function () {
 				var token = getCookie("downloadToken");
-				alert(downloadToken + ', ' + token);
 				if ((token === downloadToken) || (attempts === 0)) {
 					unblockSubmit();
 				}
