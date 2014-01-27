@@ -7,7 +7,8 @@
 			e.preventDefault && e.preventDefault();
 			return false;
 		}
-		var target = document.getElementById("doDownload") === "true" ? "downloadFrame" : "";
+		expireCookie("downloadToken");
+		var target = document.getElementById("doDownload").value === "true" ? "downloadFrame" : "";
 		document.getElementById("pdfForm").target = target;
 		var opts = {
 			lines: 13, // The number of lines to draw
@@ -34,7 +35,7 @@
 
 		function getCookie(name) {
 			var parts = document.cookie.split(name + "=");
-			if (parts.length == 2) {
+			if (parts.length === 2) {
 				return parts.pop().split(";").shift();
 			}
 			return null;
@@ -46,11 +47,11 @@
 
 		function setCursor(docStyle, buttonStyle) {
 			document.body.style.cursor = docStyle;
-			target.style.cursor = buttonStyle;
+			spinTarget.style.cursor = buttonStyle;
 		}
 
 		function setFormToken() {
-			var downloadToken = new Date().getTime();
+			var downloadToken = new Date().getTime().toString();
 			document.getElementById("downloadToken").value = downloadToken;
 			return downloadToken;
 		}
@@ -62,7 +63,8 @@
 			setCursor("wait", "wait");
 			downloadTimer = window.setInterval(function () {
 				var token = getCookie("downloadToken");
-				if ((token == downloadToken) || (attempts == 0)) {
+				alert(downloadToken + ', ' + token);
+				if ((token === downloadToken) || (attempts === 0)) {
 					unblockSubmit();
 				}
 				attempts--;
@@ -71,12 +73,12 @@
 		}
 
 		function unblockSubmit() {
-			downloading = false;
-			setCursor("auto", "pointer");
-			window.clearInterval(downloadTimer);
 			expireCookie("downloadToken");
 			spinner && spinner.stop();
+			downloading = false;
+			window.clearInterval(downloadTimer);
 			document.getElementById("getPdfButton").disabled = false;
+			setCursor("auto", "pointer");
 		}
 	}
 })();
