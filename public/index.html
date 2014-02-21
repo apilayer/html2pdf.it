@@ -13,6 +13,12 @@
 		body {
 			padding-top: 20px;
 			padding-bottom: 40px;
+			font-size: 18px;
+		}
+
+		h4 {
+			color: #4ba13f !important;
+			font-weight: bolder;
 		}
 
 		#optionsButton {
@@ -25,6 +31,7 @@
 		#pdfInput {
 			margin-bottom: 8px;
 		}
+
 		.options {
 			-webkit-transform: scale(0.6);
 			-moz-transform: scale(0.6);
@@ -50,7 +57,7 @@
 			margin: 30px 0;
 		}
 
-			/* Main marketing message and sign up button */
+		/* Main marketing message and sign up button */
 		.jumbotron {
 			margin: 60px 0;
 			text-align: center;
@@ -59,6 +66,7 @@
 		.jumbotron h1 {
 			line-height: 1;
 			padding-bottom: 40px;
+			color: #666;
 		}
 
 		.jumbotron .input, .center {
@@ -120,7 +128,6 @@
 </head>
 
 <body>
-
 <div class="container-narrow">
 
 	<div class="masthead">
@@ -144,7 +151,7 @@
 					js.id = id;
 					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253053011377188";
 					fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
+				}(document, 'script', 'facebook-jssdk'));
 			}
 		</script>
 		<iframe id="downloadFrame" style="display:none"></iframe>
@@ -221,10 +228,67 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<h4>Headers & footers</h4>
+			<h4>Nothing to install</h4>
 
-			<p>You add headers and footers to the PDF by inserting a script in the HTML of the web page. Below is an
-				example with page numbers in footer and header (You have to own the web page and modify it).
+			<p>If you do not want to install and run your own servers, you are welcome to use html2pdf.it directly
+				<code>www.html2pdf.it/?url=[url]</code>.
+			</p>
+
+			<p>If the traffic ramps up to cost me a lot of money, this may turn into a paid service, or require
+				donations. Running your own server will always be free.
+			</p>
+		</div>
+		<div class="span6">
+			<h4>Use it in your web application</h4>
+
+			<p>
+				A good use for html2pdf.it is to use it as a service in your own web application or phone app etc.
+			</p>
+
+			<p>
+				You could for example turn your HTML invoices into PDFs, before sending the to your customers.
+			</p>
+		</div>
+	</div>
+	<div>
+		<h4>Querystring parameters</h4>
+		<table class="table">
+			<tr>
+				<th>parameter</th>
+				<th>possible values</th>
+				<th>description</th>
+			</tr>
+			<tr>
+				<td><code>url</code></td>
+				<td>URL (required)</td>
+				<td>The URL of the web page you want to turn into a pdf</td>
+			</tr>
+			<tr>
+				<td><code>format</code></td>
+				<td style="white-space: nowrap;">A3 | A4 | A5 | Legal | Letter | Tabloid</td>
+				<td>The page format of the pdf generated</td>
+			</tr>
+			<tr>
+				<td><code>orientation</code></td>
+				<td>portrait | landscape</td>
+				<td>The page orientation of the pdf generated</td>
+			</tr>
+			<tr>
+				<td><code>download</code></td>
+				<td>true | false</td>
+				<td>If set to true the request for the pdf will get the HTTP header
+					<code>Content-disposition</code> set. Causing the browser to download the file instead of
+					opening it
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<h4>Headers & footers</h4>
+
+		<p>You add headers and footers to the PDF by inserting a script in the HTML of the web page. Below is an
+			example with page numbers in footer and header. NOTE: You have to control the web page and modify it by
+			inserting this script.
 				<pre class="code" style="max-width: 620px;">
 &lt;script type="text/javascript"&gt;
 //setting up headers and footers for html2pdf
@@ -240,33 +304,9 @@ var html2pdf = {
  }
 };
 &lt;/script&gt;</pre>
-			<code>{{pageNumber}}</code> will be replaced with <code>1</code> on page 1, <code>2</code> on page 2 and
-			so on. <code>{{totalPages}}</code> will be replaced by the total count of pages in the PDF.
-			</p>
-		</div>
-		<div class="span3">
-			<h4>Nothing to install</h4>
-
-			<p>If you do not want to install and run your own servers, you are welcome to use html2pdf.it directly:
-				<code>www.html2pdf.it/?url=[url]</code>.
-			</p>
-
-			<p>If the traffic ramps up to cost me a lot of money, this may turn into a paid service, or require
-				donations. Running your own server will always be free.
-			</p>
-		</div>
-		<div class="span3">
-			<h4>Use it in your web application</h4>
-
-			<p>A good use for html2pdf.it is to use it as a service in your own web application, phone app etc. Turn
-				HTML invoices into PDFs etc.
-			</p>
-
-			<h4>Contact?</h4>
-
-			<p>Drop me an email at <a href="mailto:allan@878.dk">allan@878.dk</a>
-			</p>
-		</div>
+		<code>{{pageNumber}}</code> will be replaced with 1 on page 1, replaced with 2 on page 2 and
+		so on. <code>{{totalPages}}</code> will be replaced by the total count of pages in the PDF.
+		</p>
 	</div>
 
 
@@ -295,15 +335,13 @@ var html2pdf = {
 		</div>
 	</div>
 
-	<a href="https://github.com/Muscula/html2pdf.it"><img style="position: absolute; top: 0; left: 0; border: 0;"
-	                                                      src="/img/forkme_left_red_aa0000.png"
-	                                                      alt="Fork me on GitHub"></a>
-
 	<footer class="footer">
-		<p>html2pdf.it by <a href="http://dk.linkedin.com/in/ebdrup">Allan Ebdrup</a>, based on <a
+		<p>html2pdf.it by <a href="http://dk.linkedin.com/in/ebdrup">Allan Ebdrup</a> (<a
+				href="mailto:allan@878.dk?subject=regarding html2pdf.it">allan@878.dk</a>), based on <a
 				href="http://phantomjs.org">PhantomJS</a></p>
 	</footer>
 </div>
+<a href="https://github.com/Muscula/html2pdf.it"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="/js/spin.min.js"></script>
 <script type="text/javascript" src="/js/spinOnDownload.js"></script>

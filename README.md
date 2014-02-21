@@ -22,7 +22,7 @@ npm install
 Running webserver
 -----------
 ```
-node lib/app.js
+node open.js
 ```
 
 If you want to host html2pdf.it yourself, you will have to ask your host if they support hosting Node.js applications.

@@ -23,7 +23,8 @@
     "sinon": "",
     "sinon-chai": "",
     "underscore": "",
-    "mocha-jshint": ""
+    "mocha-jshint": "",
+    "open": ""
   },
   "scripts": {
     "start": "node ./lib/app.js",
