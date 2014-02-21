@@ -187,6 +187,13 @@
 					<button type="button" value="true" class="btn" data-toggle="button">download as file</button>
 				</div>
 			</div>
+			<div id="options3" class="options" style="display:none">
+				<div class="btn-group" data-toggle-name="margin" data-toggle="buttons-radio">
+					<button type="button" disabled class="btn">margin</button>
+					<button type="button" value="0cm" class="btn" data-toggle="button">0cm</button>
+					<button type="button" value="1cm" class="btn" data-toggle="button">1cm</button>
+				</div>
+			</div>
 			<input id="doDownload" type="hidden" name="download" value="false"/>
 			<input type="hidden" name="format" value="A4"/>
 			<input type="hidden" name="downloadToken" id="downloadToken"/>
@@ -269,6 +276,11 @@
 				<td><code>format</code></td>
 				<td style="white-space: nowrap;">A3 | A4 | A5 | Legal | Letter | Tabloid</td>
 				<td>The page format of the pdf generated</td>
+			</tr>
+			<tr>
+				<td><code>margin</code></td>
+				<td style="white-space: nowrap;">0cm | 1cm | 2cm | 1in | 13mm</td>
+				<td>The margin of the pdf generated in the form <code>[0-99][cm|mm|in]</code></td>
 			</tr>
 			<tr>
 				<td><code>orientation</code></td>
