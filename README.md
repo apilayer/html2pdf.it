@@ -19,12 +19,18 @@ To get started you need to clone the repository, cd to it and run
 npm install
 ```
 
-Running webserver
+Running webserver locally
 -----------
+This also opens your webbrowser on the local webserver
 ```
 node open.js
 ```
 
+Running webserver
+-----------
+```
+node lib/app.js
+```
 If you want to host html2pdf.it yourself, you will have to ask your host if they support hosting Node.js applications.
 Node.js is still new, so a lot of hosts don't support it. 
 
