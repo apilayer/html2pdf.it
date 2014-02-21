@@ -181,23 +181,23 @@
 				</div>
 			</div>
 			<div id="options2" class="options" style="display:none">
+				<div class="btn-group" data-toggle-name="margin" data-toggle="buttons-radio">
+					<button type="button" disabled class="btn">margin</button>
+					<button type="button" value="0cm" class="btn" data-toggle="button">0cm</button>
+					<button type="button" value="1cm" class="btn" data-toggle="button">1cm</button>
+					<button type="button" value="15mm" class="btn" data-toggle="button">15mm</button>
+				</div>
 				<div class="btn-group" data-toggle-name="download" data-toggle="buttons-radio">
 					<button type="button" disabled class="btn">open</button>
 					<button type="button" value="false" class="btn" data-toggle="button">show in browser</button>
 					<button type="button" value="true" class="btn" data-toggle="button">download as file</button>
 				</div>
 			</div>
-			<div id="options3" class="options" style="display:none">
-				<div class="btn-group" data-toggle-name="margin" data-toggle="buttons-radio">
-					<button type="button" disabled class="btn">margin</button>
-					<button type="button" value="0cm" class="btn" data-toggle="button">0cm</button>
-					<button type="button" value="1cm" class="btn" data-toggle="button">1cm</button>
-				</div>
-			</div>
 			<input id="doDownload" type="hidden" name="download" value="false"/>
 			<input type="hidden" name="format" value="A4"/>
 			<input type="hidden" name="downloadToken" id="downloadToken"/>
 			<input type="hidden" name="orientation" value="portrait"/>
+			<input type="hidden" name="margin" value="1cm"/>
 		</form>
 		<button id="optionsButton" type="button" class="hidden btn btn-link">options</button>
 		<p class="lead">The pdf will be made as when you print a web page to a printer. Some web pages have not been
