@@ -1,6 +1,6 @@
 global.sinon = require('sinon');
 var chai = require('chai');
-chai.Assertion.includeStack = true;
+chai.config.includeStack = true;
 global.expect = chai.expect;
 global.request = require("request");
 global._ = require("underscore");
