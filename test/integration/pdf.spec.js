@@ -3,7 +3,7 @@ describe("setting up a test page", function () {
 	before(function () {
 		app = require("../../lib/app.js").app;
 		app.get("/test", function (req, res) {
-			res.send(200, '<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
+			res.status(200).send('<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
 				'<body><p>content</p></body></html>');
 		});
 	});
@@ -251,7 +251,7 @@ describe("setting up a test page", function () {
 			});
 
 			it('should return error message', function () {
-				expect(response.body).to.equal("Cannot get http://localhost:8080/?url=localhost%3A8080%2Ftest:" +
+				expect(response.body).to.equal("Cannot get http://localhost:8081/?url=localhost%3A8081%2Ftest:" +
 					" returns content type application/pdf. You must point html2pdf.it to HTML or TEXT content");
 			});
 		});

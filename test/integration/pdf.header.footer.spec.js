@@ -4,7 +4,7 @@ describe("headers and footers", function () {
 		before(function () {
 			app = require("../../lib/app.js").app;
 			app.get(route, function (req, res) {
-				res.send(200, '<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
+				res.status(200).send('<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
 					'<body><p>content</p><script>var html2pdf = {header:{height:"1cm",contents:"a"}}</script></body></html>');
 			});
 		});
@@ -53,7 +53,7 @@ describe("headers and footers", function () {
 		before(function () {
 			app = require("../../lib/app.js").app;
 			app.get(route, function (req, res) {
-				res.send(200, '<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
+				res.status(200).send('<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
 					'<body><p>content</p><script>var html2pdf = {header:{height:"1cm",contents:function(){return "a"}}}</script></body></html>');
 			});
 		});
@@ -102,7 +102,7 @@ describe("headers and footers", function () {
 		before(function () {
 			app = require("../../lib/app.js").app;
 			app.get(route, function (req, res) {
-				res.send(200, '<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
+				res.status(200).send('<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
 					'<body><p>content</p><script>var html2pdf = {header:{contents:function(){return "a"}}}</script></body></html>');
 			});
 		});
@@ -148,7 +148,7 @@ describe("headers and footers", function () {
 		before(function () {
 			app = require("../../lib/app.js").app;
 			app.get(route, function (req, res) {
-				res.send(200, '<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
+				res.status(200).send('<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
 					'<body><p>content</p><script>var html2pdf = {header:{height:"1cm"}}</script></body></html>');
 			});
 		});
