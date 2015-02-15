@@ -18,7 +18,7 @@ npm install
 
 Running webserver locally
 -----------
-This also opens your webbrowser on the local webserver:
+This also opens your web-browser pointing to your locally running html2pdf.it:
 ```shell
 node open.js
 ```
