@@ -41,3 +41,10 @@ Running tests
 ```shell
 npm test
 ```
+
+Page breaks
+-----------
+You can use css attribute: 
+```css
+page-break-before: always;
+```
