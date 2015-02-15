@@ -1,10 +1,10 @@
-![logo](http://html2pdf.it/favicon-32x32.png) html2pdf.it
+![logo](http://html2pdf.it/favicon-32x32.png) [html2pdf.it](http://www.html2pdf.it)
 ===========
-Using PhantomJS to generate PDFs, via a webservice. Runs using [Node.js](http://nodejs.org).
+Generate PDFs from any web-page.
 
 See it in action at: [html2pdf.it](http://www.html2pdf.it).
 
-Ready to fork and push to [Heroku](http://heroku.com) (where I run it).
+You need [Node.js](http://nodejs.org) to run it.
 
 Works out of the box on both Windows and Ubuntu.
 
