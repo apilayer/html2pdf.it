@@ -1,4 +1,4 @@
-![logo](http://html2pdf.it/apple-icon-60x60.png) html2pdf.it
+![logo](http://html2pdf.it/favicon-32x32.png) html2pdf.it
 ===========
 Using PhantomJS to generate PDFs, via a webservice. Runs using [Node.js](http://nodejs.org).
 
