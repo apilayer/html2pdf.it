@@ -29,10 +29,9 @@ node open.js
 Running webserver
 -----------
 ```
-node lib/app.js
+node .
 ```
 If you want to host html2pdf.it yourself, you will have to ask your host if they support hosting Node.js applications.
-Node.js is still new, so a lot of hosts don't support it. 
 
 If your host does not support Node.js. You need to find a new host
 that does. Heroku.com or nodejitsu.com for example.
@@ -42,13 +41,3 @@ Running tests
 ```
 npm test
 ```
-
-Node modules used
-----------------
-- Routing etc. is done with `express`
-- Testing is done with `mocha`, `chai` and `sinon`, using BDD style tests.
-- JSHint is run on the JavaScript code
-
-Node version
-------------
-Version 0.10+ of node.js is required (Domains are used for catching errors, and domains where not really stable before 0.10)
