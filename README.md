@@ -44,7 +44,7 @@ npm test
 
 Page breaks
 -----------
-You can use css attribute: 
+You can use the CSS attribute:
 ```css
 page-break-before: always;
 ```
