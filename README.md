@@ -46,3 +46,7 @@ You can use the CSS attribute:
 ```css
 page-break-before: always;
 ```
+
+License
+-------
+MIT
