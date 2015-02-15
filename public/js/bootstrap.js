@@ -1258,7 +1258,7 @@
   , replaceArrow: function(delta, dimension, position){
       this
         .arrow()
-        .css(position, delta ? (50 * (1 - delta / dimension) + "%") : '')
+        .css(position, delta ? (50 * (1 - delta / dimension) + '%') : '')
     }
 
   , setContent: function () {
@@ -1334,7 +1334,7 @@
     }
 
   , arrow: function(){
-      return this.$arrow = this.$arrow || this.tip().find(".tooltip-arrow")
+      return this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow')
     }
 
   , validate: function () {

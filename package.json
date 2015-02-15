@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "node ./lib/app.js",
-    "test": "node test.js"
+    "test": "_mocha"
   },
   "subdomain": "html2pdf",
   "gitHead": "af60c5959b545ab6c21d19919e1abb503d33c5f6",

@@ -1,15 +1,15 @@
 (function () {
 	var spinner, downloading;
-	document.getElementById("pdfForm").onsubmit = spinme;
+	document.getElementById('pdfForm').onsubmit = spinme;
 	function spinme(e) {
 		if (downloading) {
 			e = e || window.event;
 			e.preventDefault && e.preventDefault();
 			return false;
 		}
-		expireCookie("downloadToken");
-		var target = document.getElementById("doDownload").value === "true" ? "downloadFrame" : "";
-		document.getElementById("pdfForm").target = target;
+		expireCookie('downloadToken');
+		var target = document.getElementById('doDownload').value === 'true' ? 'downloadFrame' : '';
+		document.getElementById('pdfForm').target = target;
 		var opts = {
 			lines: 13, // The number of lines to draw
 			length: 70, // The length of each line
@@ -34,15 +34,15 @@
 		return blockResubmit();
 
 		function getCookie(name) {
-			var parts = document.cookie.split(name + "=");
+			var parts = document.cookie.split(name + '=');
 			if (parts.length === 2) {
-				return parts.pop().split(";").shift();
+				return parts.pop().split(';').shift();
 			}
 			return null;
 		}
 
 		function expireCookie(cName) {
-			document.cookie = encodeURIComponent(cName) + "=deleted; expires=" + new Date(0).toUTCString();
+			document.cookie = encodeURIComponent(cName) + '=deleted; expires=' + new Date(0).toUTCString();
 		}
 
 		function setCursor(docStyle, buttonStyle) {
@@ -52,7 +52,7 @@
 
 		function setFormToken() {
 			var downloadToken = new Date().getTime().toString();
-			document.getElementById("downloadToken").value = downloadToken;
+			document.getElementById('downloadToken').value = downloadToken;
 			return downloadToken;
 		}
 
@@ -60,24 +60,24 @@
 		function blockResubmit() {
 			downloading = true;
 			var downloadToken = setFormToken();
-			setCursor("wait", "wait");
+			setCursor('wait', 'wait');
 			downloadTimer = window.setInterval(function () {
-				var token = getCookie("downloadToken");
+				var token = getCookie('downloadToken');
 				if ((token === downloadToken) || (attempts === 0)) {
 					unblockSubmit();
 				}
 				attempts--;
 			}, 1000);
-			document.getElementById("getPdfButton").disabled = true;
+			document.getElementById('getPdfButton').disabled = true;
 		}
 
 		function unblockSubmit() {
-			expireCookie("downloadToken");
+			expireCookie('downloadToken');
 			spinner && spinner.stop();
 			downloading = false;
 			window.clearInterval(downloadTimer);
-			document.getElementById("getPdfButton").disabled = false;
-			setCursor("auto", "pointer");
+			document.getElementById('getPdfButton').disabled = false;
+			setCursor('auto', 'pointer');
 		}
 	}
 })();
