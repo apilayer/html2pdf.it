@@ -7,10 +7,10 @@ define green
 	@tput sgr0
 endef
 
-# Build Artifact target
+# Build Artefact target
 # =====================
 BUILD_NUMBER ?= 0
-.PHONY: artifact
-artifact:
+.PHONY: artefact
+artefact:
 	tar -czf html2pdf_$(BUILD_NUMBER).tar.gz *
-	$(call green,"[Create versioned artifact for HTML2PDF code]")
+	$(call green,"[Create versioned artefact for HTML2PDF code]")
