@@ -8,15 +8,15 @@
   },
   "private": false,
   "engines": {
-    "node": "0.10.x"
+    "node": "^7.5"
   },
   "main": "./lib/app.js",
   "dependencies": {
-    "compression": "^1.1.0",
+    "compression": "^1.6.2",
     "express": "",
-    "morgan": "^1.3.1",
+    "morgan": "^1.8.0",
     "node-uuid": "",
-    "phantomjs-prebuilt": "^2.1.13",
+    "phantomjs-prebuilt": "^2.1.14",
     "request": "",
     "slugify-url": ""
   },
