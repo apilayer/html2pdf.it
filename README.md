@@ -5,7 +5,10 @@ Generate PDFs from any web-page. You need [Node.js](http://nodejs.org) to run it
 See it in action at: [html2pdf.it](http://www.html2pdf.it).
 
 
-Works out of the box on any operating system supported by [phantomjs-prebuilt](http://npm.im/phantomjs-prebuilt); this specifically includes Windows, macOS, and most Linux distributions.
+Works out of the box on both Windows and Ubuntu. On Mac you need to:
+```shell
+brew install phantomjs
+```
 
 To get started you need to clone the repository, cd to it and run:
 -----------
