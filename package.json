@@ -17,7 +17,7 @@
     "express": "",
     "morgan": "^1.8.0",
     "node-uuid": "",
-    "phantomjs-prebuilt": "^2.1.14",
+    "phantomjs-prebuilt": "^1.9.19",
     "request": "",
     "slugify-url": ""
   },
