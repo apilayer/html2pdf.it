@@ -1,10 +1,11 @@
 describe('setting up a test page', function () {
+	var testHtml = '<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
+		'<body><p>content</p></body></html>';
 	var app;
 	before(function () {
 		app = require('../../lib/app.js').app;
 		app.get('/test', function (req, res) {
-			res.status(200).send('<!doctype html><html lang=en><head><meta charset=utf-8><title>test</title></head>' +
-				'<body><p>content</p></body></html>');
+			res.status(200).send(testHtml);
 		});
 	});
 
@@ -253,6 +254,67 @@ describe('setting up a test page', function () {
 			it('should return error message', function () {
 				expect(response.body).to.equal('Cannot get http://localhost:8081/?url=localhost%3A8081%2Ftest:' +
 					' returns content type application/pdf. You must point html2pdf.it to HTML or TEXT content');
+			});
+		});
+	});
+
+	describe('getting a data-testpage', function () {
+		var dataPrefix = 'data:text/html;charset=utf-8';
+		describe('getting pdf of data-testpage', function () {
+			this.timeout(18000);
+			var dataUrl = dataPrefix + ',' + testHtml;
+			var response;
+			before(function (done) {
+				var url = 'http://localhost:' + config.http.port + '/?url=' + encodeURIComponent(dataUrl);
+				console.log('Getting:', url);
+				return request(url, function (err, resp) {
+					if (err) {
+						return done(err);
+					}
+					response = resp;
+					return done();
+				});
+			});
+
+			it('should return statusCode 200', function () {
+				expect(response, response.body).to.have.property('statusCode', 200);
+			});
+
+			it('should return application/pdf as content-type', function () {
+				expect(response.headers).to.have.property('content-type', 'application/pdf');
+			});
+
+			it('should return content that looks like binary PDF', function () {
+				expect(response.body.substring(1, 4)).to.equal('PDF');
+			});
+		});
+
+		describe('getting pdf of base64 encoded data-testpage', function () {
+			this.timeout(18000);
+			var dataUrl = dataPrefix + ';base64,' + new Buffer(testHtml).toString('base64');
+			var response;
+			before(function (done) {
+				var url = 'http://localhost:' + config.http.port + '/?url=' + encodeURIComponent(dataUrl);
+				console.log('Getting:', url);
+				return request(url, function (err, resp) {
+					if (err) {
+						return done(err);
+					}
+					response = resp;
+					return done();
+				});
+			});
+
+			it('should return statusCode 200', function () {
+				expect(response, response.body).to.have.property('statusCode', 200);
+			});
+
+			it('should return application/pdf as content-type', function () {
+				expect(response.headers).to.have.property('content-type', 'application/pdf');
+			});
+
+			it('should return content that looks like binary PDF', function () {
+				expect(response.body.substring(1, 4)).to.equal('PDF');
 			});
 		});
 	});
