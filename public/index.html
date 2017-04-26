@@ -326,7 +326,7 @@
 		</table>
 	</div>
 	<div>
-		<h2>Headers & footers</h2>
+		<h2>Headers &amp; footers</h2>
 
 		<p>You add headers and footers to the PDF by inserting a script in the HTML of the web page. Below is an
 			example with page numbers in footer and header. NOTE: You have to control the web page and modify it by
@@ -348,6 +348,13 @@ var html2pdf = {
 		<code>{{pageNumber}}</code> will be replaced with 1 on page 1, replaced with 2 on page 2 and
 		so on. <code>{{totalPages}}</code> will be replaced by the total count of pages in the PDF.
 		</p>
+	</div>
+	<div>
+		<h2>Data URIs</h2>
+		<p>You can pass URIs that conform to the <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">Data URI scheme
+			</a>as the <code>url</code> parameter. For example <code>data:text/html;encoding=utf-8,&lt;h1>Hello&lt;/h1></code>
+			renders the HTML code <code>&lt;h1>Hello&lt;/h1></code> as a PDF.
+			See <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">Wikipedia</a> for more details.</p>
 	</div>
 
 

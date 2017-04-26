@@ -47,6 +47,18 @@ You can use the CSS attribute:
 page-break-before: always;
 ```
 
+Data URIs
+---------
+You can use data URIs like the following to generate PDFs for arbitrary HTML:
+```html
+data:text/html;encoding=utf-8,<h1>Hello</h1>
+```
+
+As described on [Wikipedia](https://en.wikipedia.org/wiki/Data_URI_scheme), the data URI should have the following format:
+```
+data:[<media type>][;base64],<data>
+```
+
 License
 -------
 MIT
