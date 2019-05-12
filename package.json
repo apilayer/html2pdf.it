@@ -8,8 +8,8 @@
   },
   "private": false,
   "engines": {
-    "node": "~10.15.3",
-    "npm": "~6.9.0"
+    "node": "^7.5",
+    "npm": "^3.10"
   },
   "main": "./lib/app.js",
   "dependencies": {
