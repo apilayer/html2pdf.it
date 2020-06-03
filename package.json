@@ -1,10 +1,10 @@
 {
-  "author": "Allan Ebdrup",
+  "author": "APILayesr",
   "name": "html2pdf.it",
   "version": "2.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Muscula/html2pdf.it"
+    "url": "https://github.com/apilayer/html2pdf.it"
   },
   "private": false,
   "engines": {
@@ -38,7 +38,7 @@
   "readmeFilename": "README.md",
   "description": "html2pdf.it\r ===========\r Using PhantomJS to generate pdfs, via a webservice. Runs using node.js.",
   "bugs": {
-    "url": "https://github.com/Muscula/html2pdf.it/issues"
+    "url": "https://github.com/apilayer/html2pdf.it/issues"
   },
   "directories": {
     "test": "test"
