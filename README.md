@@ -49,7 +49,7 @@ page-break-before: always;
 
 Data URIs
 ---------
-You can use data URIs like the following to generate PDFs for arbitrary HTML:
+You can  use data URIs like the following to generate PDFs for arbitrary HTML:
 ```html
 data:text/html;encoding=utf-8,<h1>Hello</h1>
 ```
